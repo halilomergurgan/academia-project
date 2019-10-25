@@ -9,10 +9,12 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "ckeditor/ckeditor": "dev-full/4.11.x",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.1",
+        "laravelcollective/html": "^6.0",
         "realrashid/sweet-alert": "^2.0"
     },
     "require-dev": {

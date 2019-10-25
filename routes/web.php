@@ -17,9 +17,14 @@ Route::get('/', function () {
 
 Route::group(array('prefix' => 'admin'), function()
 {
-
     Route::get('dashboard', 'AdminController@index');
+    Route::post('news/store', 'NewsController@store');
+    Route::resource('news','NewsController');
+});
 
+Route::group(array('prefix' => '/'),function ()
+{
+    Route::get('/', 'FrontendController@index');
 });
 
 Auth::routes();

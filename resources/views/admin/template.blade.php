@@ -53,13 +53,15 @@
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
     <ul>
         <li class="active"><a href="{{ url('/admin/dashboard')}}"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
-        <li> <a href="{{ url('/admin/news')}}"><span>News</span></a> </li>
-        <li> <a href="{{url('/admin/announcement')}}"><span>Announcement</span></a> </li>
-        <li><a href="{{url('/admin/about')}}"><span>About</span></a></li>
-        <li><a href="{{url('/admin/solitions')}}"><span>Solutions</span></a></li>
-        <li><a href="{{url('/admin/references')}}"><span>References</span></a></li>
-        <li><a href="{{url('/admin/menu')}}"><span>Menus</span></a></li>
-        <!--<li><a href="tables.html"><span>Partners</span></a></li>-->
+        <li> <a href="{{ url('/admin/news')}}"><span>News/Haberler</span></a> </li>
+        <li> <a href="{{ url('/admin/slider')}}"><span>Slider</span></a> </li>
+        <li> <a href="{{ url('/admin/courses')}}"><span>Courses/Eğitimler</span></a> </li>
+        <li> <a href="{{url('/admin/magazines')}}"><span>Magazines/Dergiler</span></a> </li>
+        <li><a href="{{url('/admin/about')}}"><span>About/Hakkımızda</span></a></li>
+        <li><a href="{{url('/admin/about-home')}}"><span>Anasayfa About</span></a></li>
+        <li><a href="{{url('/admin/contact')}}"><span>Contact/İletişim</span></a></li>
+        <li><a href="{{url('/admin/menu')}}"><span>Menus/Menuler</span></a></li>
+        <li><a href="{{url('/admin/settings')}}"><span>Settings/Site Ayarları</span></a></li>
 
     </ul>
 </div>

@@ -12,7 +12,7 @@ $factory->define(\App\Models\News::class, function (Faker $faker) {
         'title_eng'=> $name,
         'description_tr'=>$faker->sentence,
         'description_eng' =>$faker->sentence,
-        'photo_path'=>$faker->image('public/storage/images',500,350, null, false)
+        'photo_path'=>$faker->image('public/storage/news',500,350, null, false)
 
     ];
 });

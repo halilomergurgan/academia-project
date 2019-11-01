@@ -18,8 +18,9 @@ Route::get('/', function () {
 Route::group(array('prefix' => 'admin'), function()
 {
     Route::get('dashboard', 'AdminController@index');
-    Route::post('news/store', 'NewsController@store');
     Route::resource('news','NewsController');
+    Route::resource('slider','SliderController');
+    Route::resource('courses','CourseController');
 });
 
 Route::group(array('prefix' => '/'),function ()

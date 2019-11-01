@@ -6,10 +6,10 @@
         <div class="span">
             <div class="widget-box">
                 <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-                    <h5>News Create Page</h5>
+                    <h5>Slider Create Page</h5>
                 </div>
                 <div class="widget-content nopadding">
-                    {!! Form::open(['route'=>['news.store'],'method'=>'POST','files'=>'true','class'=>'widget-content nopadding']) !!}
+                    {!! Form::open(['route'=>['slider.store'],'method'=>'POST','files'=>'true','class'=>'widget-content nopadding']) !!}
                         {{ csrf_field() }}
                     <div class="control-group">
                         <label class="control-label">Turkish Title :</label>
@@ -30,28 +30,6 @@
                         @if($errors->has('title_eng'))
                             <p class="alert alert-danger">
                                 {{$errors->first('title_eng')}}
-                            </p>
-                        @endif
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">Turkish Description</label>
-                        <div class="controls">
-                            <textarea name="description_tr" id="description_tr" >{{old('description_tr')}}</textarea>
-                        </div>
-                        @if($errors->has('description_tr'))
-                            <p class="alert alert-danger">
-                                {{$errors->first('description_tr')}}
-                            </p>
-                        @endif
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">English Description</label>
-                        <div class="controls">
-                            <textarea name="description_eng" id="description_eng" >{{old('description_eng')}}</textarea>
-                        </div>
-                        @if($errors->has('description_eng'))
-                            <p class="alert alert-danger">
-                                {{$errors->first('description_eng')}}
                             </p>
                         @endif
                     </div>
@@ -82,6 +60,4 @@
 @endsection
 
 @section('js')
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>tinymce.init({selector:'textarea'});</script>
 @endsection

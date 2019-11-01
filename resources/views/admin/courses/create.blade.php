@@ -6,10 +6,10 @@
         <div class="span">
             <div class="widget-box">
                 <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-                    <h5>News Create Page</h5>
+                    <h5>Course Create Page</h5>
                 </div>
                 <div class="widget-content nopadding">
-                    {!! Form::open(['route'=>['news.store'],'method'=>'POST','files'=>'true','class'=>'widget-content nopadding']) !!}
+                    {!! Form::open(['route'=>['courses.store'],'method'=>'POST','files'=>'true','class'=>'widget-content nopadding']) !!}
                         {{ csrf_field() }}
                     <div class="control-group">
                         <label class="control-label">Turkish Title :</label>
@@ -65,6 +65,18 @@
                                 </p>
                             @endif
                         </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Video Embed Path :</label>
+                        <p>For Exp: https://www.youtube.com/watch?v=<b>VIDEO_ID</b></p>
+                        <div class="controls">
+                            <input type="text" class="span11"  name="embed_video_path" value="{{old('embed_video_path')}}" />
+                        </div>
+                        @if($errors->has('embed_video_path'))
+                            <p class="alert alert-danger">
+                                {{$errors->first('embed_video_path')}}
+                            </p>
+                        @endif
                     </div>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-success">Save</button>

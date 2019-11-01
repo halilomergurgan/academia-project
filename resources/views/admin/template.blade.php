@@ -7,15 +7,15 @@
 <html lang="en">
 <head>
     <title>Admin Panel</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/admin/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/admin/css/bootstrap-responsive.min.css" />
-    <link rel="stylesheet" href="/admin/css/fullcalendar.css" />
-    <link rel="stylesheet" href="/admin/css/matrix-style.css" />
-    <link rel="stylesheet" href="/admin/css/matrix-media.css" />
-    <link href="/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/admin/css/jquery.gritter.css" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/admin/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/admin/css/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="/admin/css/fullcalendar.css"/>
+    <link rel="stylesheet" href="/admin/css/matrix-style.css"/>
+    <link rel="stylesheet" href="/admin/css/matrix-media.css"/>
+    <link href="/admin/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/admin/css/jquery.gritter.css"/>
     @yield('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
@@ -30,8 +30,9 @@
 <div id="user-nav" class="navbar navbar-inverse">
     <ul class="nav">
         <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-               Welcome {{ Auth::user()->name }} <span class="caret"></span>
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false" v-pre>
+                Welcome {{ Auth::user()->name }} <span class="caret"></span>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -52,11 +53,12 @@
 </div>
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
     <ul>
-        <li class="active"><a href="{{ url('/admin/dashboard')}}"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
-        <li> <a href="{{ url('/admin/news')}}"><span>News/Haberler</span></a> </li>
-        <li> <a href="{{ url('/admin/slider')}}"><span>Slider</span></a> </li>
-        <li> <a href="{{ url('/admin/courses')}}"><span>Courses/Eğitimler</span></a> </li>
-        <li> <a href="{{url('/admin/magazines')}}"><span>Magazines/Dergiler</span></a> </li>
+        <li class="active"><a href="{{ url('/admin/dashboard')}}"><i class="icon icon-home"></i> <span>Dashboard</span></a>
+        </li>
+        <li><a href="{{ url('/admin/news')}}"><span>News/Haberler</span></a></li>
+        <li><a href="{{ url('/admin/slider')}}"><span>Slider</span></a></li>
+        <li><a href="{{ url('/admin/courses')}}"><span>Courses/Eğitimler</span></a></li>
+        <li><a href="{{url('/admin/magazines')}}"><span>Magazines/Dergiler</span></a></li>
         <li><a href="{{url('/admin/about')}}"><span>About/Hakkımızda</span></a></li>
         <li><a href="{{url('/admin/about-home')}}"><span>Anasayfa About</span></a></li>
         <li><a href="{{url('/admin/contact')}}"><span>Contact/İletişim</span></a></li>
@@ -67,63 +69,65 @@
 </div>
 <div id="content">
     <div id="content-header">
-        <div id="breadcrumb"> <a href="{{ url('/admin/dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+        <div id="breadcrumb"><a href="{{ url('/admin/dashboard') }}" title="Go to Home" class="tip-bottom"><i
+                    class="icon-home"></i> Home</a></div>
     </div>
 
     <div class="container-fluid">
-    @yield('content')
+        @yield('content')
 
     </div>
+</div>
 
-<script src="/admin/js/excanvas.min.js"></script>
-<script src="/admin/js/jquery.min.js"></script>
-<script src="/admin/js/jquery.ui.custom.js"></script>
-<script src="/admin/js/bootstrap.min.js"></script>
-<script src="/admin/js/jquery.flot.min.js"></script>
-<script src="/admin/js/jquery.flot.resize.min.js"></script>
-<script src="/admin/js/jquery.peity.min.js"></script>
-<script src="/admin/js/fullcalendar.min.js"></script>
-<script src="/admin/js/matrix.js"></script>
-<script src="/admin/js/matrix.dashboard.js"></script>
-<script src="/admin/js/jquery.gritter.min.js"></script>
-<script src="/admin/js/matrix.interface.js"></script>
-<script src="/admin/js/matrix.chat.js"></script>
-<script src="/admin/js/jquery.validate.js"></script>
-<script src="/admin/js/matrix.form_validation.js"></script>
-<script src="/admin/js/jquery.wizard.js"></script>
-<script src="/admin/js/jquery.uniform.js"></script>
-<script src="/admin/js/select2.min.js"></script>
-<script src="/admin/js/matrix.popover.js"></script>
-<script src="/admin/js/jquery.dataTables.min.js"></script>
-<script src="/admin/js/matrix.tables.js"></script>
+    <script src="/admin/js/excanvas.min.js"></script>
+    <script src="/admin/js/jquery.min.js"></script>
+    <script src="/admin/js/jquery.ui.custom.js"></script>
+    <script src="/admin/js/bootstrap.min.js"></script>
+    <script src="/admin/js/jquery.flot.min.js"></script>
+    <script src="/admin/js/jquery.flot.resize.min.js"></script>
+    <script src="/admin/js/jquery.peity.min.js"></script>
+    <script src="/admin/js/fullcalendar.min.js"></script>
+    <script src="/admin/js/matrix.js"></script>
+    <script src="/admin/js/matrix.dashboard.js"></script>
+    <script src="/admin/js/jquery.gritter.min.js"></script>
+    <script src="/admin/js/matrix.interface.js"></script>
+    <script src="/admin/js/matrix.chat.js"></script>
+    <script src="/admin/js/jquery.validate.js"></script>
+    <script src="/admin/js/matrix.form_validation.js"></script>
+    <script src="/admin/js/jquery.wizard.js"></script>
+    <script src="/admin/js/jquery.uniform.js"></script>
+    <script src="/admin/js/select2.min.js"></script>
+    <script src="/admin/js/matrix.popover.js"></script>
+    <script src="/admin/js/jquery.dataTables.min.js"></script>
+    <script src="/admin/js/matrix.tables.js"></script>
 
-<script type="text/javascript">
-    // This function is called from the pop-up menus to transfer to
-    // a different page. Ignore if the value returned is a null string:
-    function goPage (newURL) {
+    <script type="text/javascript">
+        // This function is called from the pop-up menus to transfer to
+        // a different page. Ignore if the value returned is a null string:
+        function goPage(newURL) {
 
-        // if url is empty, skip the menu dividers and reset the menu selection to default
-        if (newURL != "") {quick-actions_homepage
+            // if url is empty, skip the menu dividers and reset the menu selection to default
+            if (newURL != "") {
+                quick - actions_homepage
 
-            // if url is "-", it is this page -- reset the menu:
-            if (newURL == "-" ) {
-                resetMenu();
-            }
-            // else, send page to designated URL
-            else {
-                document.location.href = newURL;
+                // if url is "-", it is this page -- reset the menu:
+                if (newURL == "-") {
+                    resetMenu();
+                }
+                // else, send page to designated URL
+                else {
+                    document.location.href = newURL;
+                }
             }
         }
-    }
 
-    // resets the menu selection upon entry to this page:
-    function resetMenu() {
-        document.gomenu.selector.selectedIndex = 2;
-    }
-</script>
+        // resets the menu selection upon entry to this page:
+        function resetMenu() {
+            document.gomenu.selector.selectedIndex = 2;
+        }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
-
-    @include('sweetalert::alert')
+@include('sweetalert::alert')
 @yield('js')
 </body>
 </html>

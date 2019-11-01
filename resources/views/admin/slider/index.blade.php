@@ -3,14 +3,14 @@
 @section('content')
 
     <div style="float: right;margin: 20px 0px 5px 0;">
-        <a href="{{route('news.create')}}" class="btn btn-success"> News Create
+        <a href="{{route('slider.create')}}" class="btn btn-success"> Slider Create
         </a>
     </div>
     <div style="clear: both;">
     </div>
     <div class="widget-box">
         <div class="widget-title"><span class="icon"><i class="icon-th"></i></span>
-            <h5>News Table</h5>
+            <h5>Slider Table</h5>
         </div>
         <div class="widget-content nopadding">
             <table class="table table-bordered data-table">
@@ -18,8 +18,6 @@
                 <tr>
                     <th>Turkish Title</th>
                     <th>English Title</th>
-                    <th>Description TR</th>
-                    <th>Description ENG</th>
                     <th>Photo</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -27,16 +25,15 @@
                 </thead>
                 <tbody>
 
-                @foreach($news as $new)
+                @foreach($sliders as $slider)
+
                     <tr class="gradeX">
-                        <td>{{$new->title_tr}}</td>
-                        <td>{{$new->title_eng}}</td>
-                        <td>{!! Str::limit($new->description_tr, 100) !!}</td>
-                        <td>{!! $new->description_en_for_datatable !!}</td>
-                        <td><a href="{{$new->photo_path}}" target="_blank"><img src="{{$new->photo_path}}" height="100" width="100"></a></td>
-                        <td class="center"><a href="{{route('news.edit',$new->id)}}" class="btn btn-success btn-mini">Edit</a>
+                        <td>{{$slider->title_tr}}</td>
+                        <td>{{$slider->title_eng}}</td>
+                        <td><a href="{{$slider->photo_path}}" target="_blank"><img src="{{$slider->photo_path}}" height="100" width="100"></a></td>
+                        <td class="center"><a href="{{route('slider.edit',$slider->id)}}" class="btn btn-success btn-mini">Edit</a>
                         </td>
-                        {!! Form::model($news,['route'=>['news.destroy',$new->id],'method'=>'DELETE']) !!}
+                        {!! Form::model($sliders,['route'=>['slider.destroy',$slider->id],'method'=>'DELETE']) !!}
                         <td class="center">
                             <button type="submit" class="btn btn-danger btn-mini" onclick="if (!confirm('Are you sure?')) { return false }"><span>Delete</span></button>
 

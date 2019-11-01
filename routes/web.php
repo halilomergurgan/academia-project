@@ -21,6 +21,7 @@ Route::group(array('prefix' => 'admin'), function()
     Route::resource('news','NewsController');
     Route::resource('slider','SliderController');
     Route::resource('courses','CourseController');
+    Route::resource('magazines','MagazineController');
 });
 
 Route::group(array('prefix' => '/'),function ()

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="/frontend/img/favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href="http://allfont.net/allfont.css?fonts=montserrat-light" rel="stylesheet" type="text/css" />
+    <link href="http://allfont.net/allfont.css?fonts=montserrat-light" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="/frontend/css/linearfont.css">
     <link rel="stylesheet" href="/frontend/css/bootstrap.min.css">
     <link rel="stylesheet" href="/frontend/css/meanmenu.min.css">
@@ -27,6 +27,7 @@
     <script src="/frontend/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
+
 <div class="header_area home-2">
     <div class="div container">
         <div class="row">
@@ -88,11 +89,11 @@
                             <li><a href="#">Pages</a>
                                 <ul>
                                     <li><a href="faq.html">FAQ </a></li>
-                                    <li><a href="login.html">Login Page  </a></li>
-                                    <li><a href="video.html">Video Gallery  </a></li>
+                                    <li><a href="login.html">Login Page </a></li>
+                                    <li><a href="video.html">Video Gallery </a></li>
                                     <li><a href="gellary.html">Image Gallery </a></li>
                                     <li><a href="about-page.html">About Page </a></li>
-                                    <li><a href="news-bulletin.html">News Bulletin  </a></li>
+                                    <li><a href="news-bulletin.html">News Bulletin </a></li>
                                     <li><a href="registration.html">Registration Form</a></li>
                                     <li><a href="contract.html">Contacts </a></li>
                                     <li><a href="404.html">404 </a></li>
@@ -110,6 +111,66 @@
         </div>
     </div>
 </div>
+<div class="slide_wrap_area">
+    <div class="nav_area home-2">
+        <div class="container">
+            <div class="row">
+                <!--nav item-->
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="home2_logo"><a href="index-2.html"><img src="img/home2/logo-white.png" alt=""/></a>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-9">
+                    <!--  nav menu-->
+                    <nav class="menu">
+                        <ul class="navid pull-left">
+                            <li><a href="index.html">Home <i class="fa fa-angle-down"></i></a>
+                                <ul>
+                                    <li><a href="index-2.html">Home 2</a></li>
+                                    <li><a href="index-3.html">Home 3</a></li>
+                                    <li><a href="index-4.html">Home Box Layout</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Courses <i class="fa fa-angle-down"></i></a>
+                                <ul>
+                                    <li><a href="courses-item-1.html">Courses List layout 1</a></li>
+                                    <li><a href="courses-item-2.html">Courses List layout 2 </a></li>
+                                    <li><a href="single-courses.html">Course Item </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Pages <i class="fa fa-angle-down"></i></a>
+                                <ul>
+                                    <li><a href="faq.html">FAQ </a></li>
+                                    <li><a href="login.html">Login Page </a></li>
+                                    <li><a href="video.html">Video Gallery </a></li>
+                                    <li><a href="gellary.html">Image Gallery </a></li>
+                                    <li><a href="about-page.html">About Page </a></li>
+                                    <li><a href="news-bulletin.html">News Bulletin </a></li>
+                                    <li><a href="registration.html">Registration Form</a></li>
+                                    <li><a href="contract.html">Contacts </a></li>
+                                    <li><a href="404.html">404 </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="store.html">Store</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="about-page.html">About Us</a></li>
+                            <li><a href="contract.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <!--end  nav menu-->
+                    <div class="search pull-right">
+                        <div class="search-box">
+                            <input type="text" class="form_control" placeholder="search..."/>
+                            <span class="search-open"><i class="fa fa-search search"></i><i
+                                    class="fa fa-close hidden close"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <!--end nav item -->
+            </div>
+        </div>
+
+    </div>
     <!-- HOME SLIDER -->
     <div class="slider-wrap home-1-slider" id="home">
         <div id="mainSlider" class="nivoSlider slider-image">
@@ -119,22 +180,26 @@
         <div id="htmlcaption1" class="nivo-html-caption slider-caption-1">
             <div class="slider-progress"></div>
 
-        <div id="htmlcaption2" class="nivo-html-caption slider-caption-2">
-            <div class="slider-progress"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="slide1-text slide-text">
-                            <div class="middle-text">
-                                <div class="left_sidet1">
-                                    <div class="cap-title wow slideInRight" data-wow-duration=".9s" data-wow-delay="0s">
-                                        <h1>Multilingual Supported <br />with RTL</h1>
-                                    </div>
-                                    <div class="cap-dec wow slideInRight" data-wow-duration="1.1s" data-wow-delay="0s">
-                                        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. .</h2>
-                                    </div>
-                                    <div class="cap-readmore animated fadeInUpBig" data-wow-duration="1.5s" data-wow-delay=".5s">
-                                        <a href="#" >Sing Up</a>
+            <div id="htmlcaption2" class="nivo-html-caption slider-caption-2">
+                <div class="slider-progress"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="slide1-text slide-text">
+                                <div class="middle-text">
+                                    <div class="left_sidet1">
+                                        <div class="cap-title wow slideInRight" data-wow-duration=".9s"
+                                             data-wow-delay="0s">
+                                            <h1>Multilingual Supported <br/>with RTL</h1>
+                                        </div>
+                                        <div class="cap-dec wow slideInRight" data-wow-duration="1.1s"
+                                             data-wow-delay="0s">
+                                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. .</h2>
+                                        </div>
+                                        <div class="cap-readmore animated fadeInUpBig" data-wow-duration="1.5s"
+                                             data-wow-delay=".5s">
+                                            <a href="#">Sing Up</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +210,6 @@
         </div>
     </div>
 </div>
-
 @yield('content')
 
 <!-- footer bottom area -->

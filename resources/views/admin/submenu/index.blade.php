@@ -1,54 +1,41 @@
 @extends('admin.template')
-
 @section('content')
-
     <div style="float: right;margin: 20px 0px 5px 0;">
-        <a href="{{route('magazines.create')}}" class="btn btn-success"> Magazine Create
+        <a href="{{route('submenu.create')}}" class="btn btn-success"> Sub Menu Create
         </a>
     </div>
     <div style="clear: both;">
     </div>
     <div class="widget-box">
         <div class="widget-title"><span class="icon"><i class="icon-th"></i></span>
-            <h5>Magazine Table</h5>
+            <h5>Sub Menus Table</h5>
         </div>
         <div class="widget-content nopadding">
             <table class="table table-bordered data-table">
                 <thead>
                 <tr>
-                    <th>Turkish Title</th>
-                    <th>English Title</th>
-                    <th>Description TR</th>
-                    <th>Description ENG</th>
-                    <th>Photo</th>
+                    <th>Own Menu</th>
+                    <th>Menu TR</th>
+                    <th>Menu English</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
-
-                @foreach($magazines as $magazine)
+                @foreach($subMenu as $sub)
                     <tr class="gradeX">
-                        <td>{{$magazine->title_tr}}</td>
-                        <td>{{$magazine->title_eng}}</td>
-                        <td>{{ Str::limit($magazine->description_tr, 100) }}</td>
-                        <td>{{ Str::limit($magazine->description_eng, 100)}}</td>
-                        {{--                        <td>{!! Str::limit($magazine->description_tr, 100) !!}</td>--}}
-                        {{--                        <td>{!! $magazine->description_en_for_datatable !!}</td>--}}
-                        <td><a href="{{$magazine->photo_path}}" target="_blank"><img src="{{$magazine->photo_path}}"
-                                                                                     height="100" width="100"></a></td>
-                        <td class="center"><a href="{{route('magazines.edit',$magazine->id)}}"
+                        <td>{{$sub->menu_id}}</td>
+                        <td>{{$sub->name_tr}}</td>
+                        <td>{{$sub->name_eng}}</td>
+                        <td class="center"><a href="{{route('submenu.edit',$sub->id)}}"
                                               class="btn btn-success btn-mini">Edit</a>
                         </td>
-                        {!! Form::model($magazines,['route'=>['magazines.destroy',$magazine->id],'method'=>'DELETE']) !!}
+                        {!! Form::model($sub,['route'=>['submenu.destroy',$sub->id],'method'=>'DELETE']) !!}
                         <td class="center">
                             <button type="submit" class="btn btn-danger btn-mini"
                                     onclick="if (!confirm('Are you sure?')) { return false }"><span>Delete</span>
                             </button>
-
                         </td>
-
-
                         {!! Form::close() !!}
                     </tr>
                 @endforeach
@@ -58,14 +45,11 @@
     </div>
 
 @endsection
-
 @section('css')
     <link rel="stylesheet" href="/admin/css/uniform.css"/>
     <link rel="stylesheet" href="/admin/css/select2.css"/>
 @endsection
-
 @section('js')
-
     <script src="/admin/js/excanvas.min.js"></script>
     <script src="/admin/js/jquery.min.js"></script>
     <script src="/admin/js/jquery.ui.custom.js"></script>

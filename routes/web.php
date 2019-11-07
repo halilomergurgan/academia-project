@@ -22,6 +22,10 @@ Route::group(array('prefix' => 'admin'), function()
     Route::resource('slider','SliderController');
     Route::resource('courses','CourseController');
     Route::resource('magazines','MagazineController');
+    Route::resource('about','AboutController');
+    Route::resource('contact','ContactController');
+    Route::resource('menu','MenuController');
+    Route::resource('submenu','SubMenuController');
 });
 
 Route::group(array('prefix' => '/'),function ()

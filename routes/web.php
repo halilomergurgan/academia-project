@@ -26,6 +26,7 @@ Route::group(array('prefix' => 'admin'), function()
     Route::resource('contact','ContactController');
     Route::resource('menu','MenuController');
     Route::resource('submenu','SubMenuController');
+    Route::resource('posts','PostController');
 });
 
 Route::group(array('prefix' => '/'),function ()

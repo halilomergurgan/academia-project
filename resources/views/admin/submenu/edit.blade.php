@@ -17,7 +17,6 @@
                                 <select name="menu_id" class="span11">
                                     @foreach($menus as $menu)
                                         <option value="{{$menu->id}}" {{$menu->id == old('menu_id',$subMenu->menu_id) ? 'selected' : $menu->name_tr }}>{{$menu->name_tr}} </option>
-
                                     @endforeach
                                 </select>
                             </div>

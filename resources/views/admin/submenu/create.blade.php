@@ -9,7 +9,7 @@
                     <h5>Sub Menu Create Page</h5>
                 </div>
                 <div class="widget-content nopadding">
-                    {!! Form::open(['route'=>['submenu.store'],'method'=>'POST','class'=>'widget-content nopadding']) !!}
+                    {!! Form::open(['route'=>['submenu.store'],'method'=>'POST','files' => 'true','class'=>'widget-content nopadding']) !!}
                     {{ csrf_field() }}
                     <div class="control-group">
                         <label class="control-label">Own Menu Name :</label>

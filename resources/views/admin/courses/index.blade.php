@@ -30,8 +30,8 @@
                     <tr class="gradeX">
                         <td>{{$course->title_tr}}</td>
                         <td>{{$course->title_eng}}</td>
-                        <td>{!! Str::limit($course->description_tr, 100) !!}</td>
-                        <td>{!! Str::limit($course->description_eng, 100) !!}</td>
+                        <td>{{ Str::limit($course->description_tr, 100) }}</td>
+                        <td>{{ Str::limit($course->description_eng, 100)}}</td>
                         <td><a href="{{$course->photo_path}}" target="_blank"><img src="{{$course->photo_path}}"
                                                                                    height="100" width="100"></a></td>
                         <td>

@@ -14,9 +14,9 @@
             <table class="table table-bordered data-table">
                 <thead>
                 <tr>
-                    <th>Own Menu</th>
-                    <th>Menu TR</th>
-                    <th>Menu English</th>
+                    <th>Turkish Menu Name</th>
+                    <th>Sub Menu TR</th>
+                    <th>Sub Menu English</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -24,7 +24,7 @@
                 <tbody>
                 @foreach($subMenu as $sub)
                     <tr class="gradeX">
-                        <td>{{$sub->menu_id}}</td>
+                        <td>{{$sub->menu->name_tr}}</td>
                         <td>{{$sub->name_tr}}</td>
                         <td>{{$sub->name_eng}}</td>
                         <td class="center"><a href="{{route('submenu.edit',$sub->id)}}"

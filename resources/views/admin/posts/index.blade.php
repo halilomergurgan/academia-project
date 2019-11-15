@@ -30,8 +30,8 @@
 
                 @foreach($posts as $post)
                     <tr class="gradeX">
-                        <td>{{$post->menu_id}}</td>
-                        <td>{{$post->submenu_id}}</td>
+                        <td>{{$post->menu->name_tr}}</td>
+                        <td>{{$post->subMenu->name_tr}}</td>
                         <td>{{$post->title_tr}}</td>
                         <td>{{$post->title_eng}}</td>
                         <td>{{ Str::limit($post->description_tr, 100) }}</td>

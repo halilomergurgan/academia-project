@@ -17,8 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('admin.posts.index',compact('posts'));
+        $posts = Post::with('menu')->with('subMenu')->get();
+
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -28,19 +29,19 @@ class PostController extends Controller
      */
     public function create()
     {
-        try {
-            $menus = Menu::all();
-            $subMenus = SubMenu::all();
-            return view('admin.posts.create',compact('menus','subMenus'));
-        } catch (ModelNotFoundException $exception) {
-            return redirect()->action('PostController@index');
+            try {
+                $menus = Menu::all();
+                $subMenus = SubMenu::all();
+                return view('admin.posts.create', compact('menus', 'subMenus'));
+            } catch (ModelNotFoundException $exception) {
+                return redirect()->action('PostController@index');
+            }
         }
-    }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -50,11 +51,12 @@ class PostController extends Controller
             'title_eng' => 'required',
             'description_tr' => 'required',
             'description_eng' => 'required',
-            'menu_id' => 'required|exists:menus',
-            'submenu_id' => 'required|exists:sub_menus',
+            'menu_id' => 'required|exists:menus,id',
+            'submenu_id' => 'required|exists:sub_menus,id',
             'photo_path' => 'nullable',
             'embed_video_path' => 'nullable'
         ]);
+
 
         $post = new Post();
         $post->title_tr = request('title_tr');
@@ -82,7 +84,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -93,7 +95,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -103,7 +105,7 @@ class PostController extends Controller
             $menus = Menu::all();
             $subMenus = SubMenu::all();
             $posts = Post::findOrFail($id);
-            return view('admin.posts.edit', compact('posts','subMenus','menus'));
+            return view('admin.posts.edit', compact('posts', 'subMenus', 'menus'));
         } catch (ModelNotFoundException $exception) {
             return redirect()->action('SubMenuController@index');
         }
@@ -112,8 +114,8 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -134,9 +136,9 @@ class PostController extends Controller
         }
 
         $post->save();
-        if ($post){
+        if ($post) {
             return redirect()->route('posts.index');
-        }else{
+        } else {
             return redirect()->back();
         }
     }
@@ -144,7 +146,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

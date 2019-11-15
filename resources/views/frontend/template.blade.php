@@ -35,9 +35,7 @@
                 <div class="phone_address clear">
                     <p class="no-margin">
                         <small>
-                            <span class="text-msg">Have any questions?</span>
-                            <span class="icon-set"><i class="fa fa-phone"></i> +880 1973 833 508</span>
-                            <span class="icon-set"><i class="fa fa-envelope"></i> admin@bootexperts.com</span>
+
                         </small>
                     </p>
                 </div>
@@ -47,7 +45,7 @@
                     <div class="language home-2">
                         <select class="form-lan">
                             <option value="english" selected>English</option>
-                            <option value="english">Arabic</option>
+                            <option value="english">Türkçe</option>
                         </select>
                     </div>
                 </div>
@@ -63,61 +61,13 @@
     </div>
 </div>
 <!--end header  area -->
-<!--Start mobile menu  area -->
-<div class="mobile_memu_area home-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="mobile_memu">
-                    <!--  nav menu-->
-                    <nav>
-                        <ul class="navid">
-                            <li><a href="index.html">Home</a>
-                                <ul>
-                                    <li><a href="index-2.html">Home 2</a></li>
-                                    <li><a href="index-3.html">Home 3</a></li>
-                                    <li><a href="index-4.html">Home Box Layout</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Courses</a>
-                                <ul>
-                                    <li><a href="courses-item-1.html">Courses List layout 1</a></li>
-                                    <li><a href="courses-item-2.html">Courses List layout 2 </a></li>
-                                    <li><a href="single-courses.html">Course Item </a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Pages</a>
-                                <ul>
-                                    <li><a href="faq.html">FAQ </a></li>
-                                    <li><a href="login.html">Login Page </a></li>
-                                    <li><a href="video.html">Video Gallery </a></li>
-                                    <li><a href="gellary.html">Image Gallery </a></li>
-                                    <li><a href="about-page.html">About Page </a></li>
-                                    <li><a href="news-bulletin.html">News Bulletin </a></li>
-                                    <li><a href="registration.html">Registration Form</a></li>
-                                    <li><a href="contract.html">Contacts </a></li>
-                                    <li><a href="404.html">404 </a></li>
-                                </ul>
-                            </li>
-                            <li><a href="store.html">Store</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="about-page.html">About Us</a></li>
-                            <li><a href="contract.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                    <!--end  nav menu-->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="slide_wrap_area">
     <div class="nav_area home-2">
         <div class="container">
             <div class="row">
                 <!--nav item-->
                 <div class="col-md-3 col-sm-3 col-xs-3">
-                    <div class="home2_logo"><a href="index-2.html"><img src="img/home2/logo-white.png" alt=""/></a>
+                    <div class="home2_logo"><a href="index-2.html"><img src="frontend/img/home2/logo-white.png" alt=""/></a>
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-9">
@@ -196,10 +146,7 @@
                                              data-wow-delay="0s">
                                             <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. .</h2>
                                         </div>
-                                        <div class="cap-readmore animated fadeInUpBig" data-wow-duration="1.5s"
-                                             data-wow-delay=".5s">
-                                            <a href="#">Sing Up</a>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -219,17 +166,17 @@
             <div class=" col-sm-6 col-md-6 col-lg-6">
                 <div class="footer_text">
                     <p>
-                        Copyright © 2016 Academia. All Rights Reserved.
+                        <a href="https://ydyazilim.com/tr/">YD Yazılım</a>  © 2019 <br> Tüm Hakları Saklıdır..
                     </p>
                 </div>
             </div>
             <div class=" col-sm-6 col-md-6 col-lg-6">
-                <p class="text-right">Design By <a href="http://bootexperts.com/">bootexperts.com</a></p>
+                <p class="text-right">Design By <a href="https://www.linkedin.com/in/halilomergurkan/">Halil Ömer GÜRKAN</a></p>
             </div>
         </div>
     </div>
 </div>
-
+<!--Start script  area -->
 <script src="/frontend/js/vendor/jquery-1.11.3.min.js"></script>
 <script src="/frontend/js/bootstrap.min.js"></script>
 <script src="/frontend/js/wow.min.js"></script>
@@ -241,5 +188,6 @@
 <script type="text/javascript" src="/frontend/venobox/venobox.min.js"></script>
 <script src="/frontend/js/plugins.js"></script>
 <script src="/frontend/js/main.js"></script>
+<!--End script  area -->
 </body>
 </html>

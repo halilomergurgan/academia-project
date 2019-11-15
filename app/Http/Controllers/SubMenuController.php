@@ -10,7 +10,7 @@ class SubMenuController extends Controller
 {
     public function index()
     {
-        $subMenu = SubMenu::all();
+        $subMenu = SubMenu::with('menu')->get();
         return view('admin.submenu.index', compact('subMenu'));
     }
     public function create()

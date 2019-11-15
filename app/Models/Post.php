@@ -14,4 +14,14 @@ class Post extends Model
     {
         return Storage::url($value);
     }
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class, 'menu_id', 'id');
+    }
+
+    public function subMenu()
+    {
+        return $this->belongsTo(SubMenu::class, 'submenu_id', 'id');
+    }
 }

@@ -1,6 +1,37 @@
 @extends('frontend.template')
 
 @section('content')
+    <div class="slide_wrap_area">
+        <!-- HOME SLIDER -->
+        <div class="slider-wrap home-1-slider" id="home">
+            <div id="mainSlider" class="nivoSlider slider-image">
+                <?php $i = 0; ?>
+                @foreach($sliders as $key => $slider)
+                    <img src="{{$slider->photo_path}}" style="width: 110px; height: 610px;" alt="main slider" title="#htmlcaption{{$i++}}"/>
+                @endforeach
+            </div>
+            <div id="htmlcaption1" class="nivo-html-caption slider-caption-1">
+                <div class="slider-progress"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="slide1-text slide-text">
+                                <div class="middle-text">
+                                    <div class="left_sidet1">
+                                        <div class="cap-title wow slideInRight" data-wow-duration=".9s"
+                                             data-wow-delay="0s">
+                                            <h1 style="color: #0e90d2;">{{$slider->title_tr}} </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- HOME SLIDER -->
+    </div>
     <!--Start about  area -->
     <div class="about_area home-2">
         <div class="container">
@@ -11,95 +42,23 @@
                             Welcome to <span> Academia</span>
                         </h3>
                         <div class="content-desc">
-                            <div class="">
-                                <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada
-                                    fames ac turpis egestas.</p>
-                            </div>
-
-                            <div class="about_texts">
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet,
-                                    ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
-                                    Mauris placerat eleifend leo.</p>
-
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet,
-                                    ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
-                                    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
-                                    pharetra. </p>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                    egestas.</p>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                    egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet,
-                                    ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
-                                    Mauris placerat eleifend leo.</p>
-                                <p><strong>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                        turpis egestas.</strong></p>
-
-                            </div>
+                            {!! html_entity_decode(nl2br(e($about[0]->description_tr))) !!}
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div class="video-wrapper pull-right">
-                        <a class="venobox_custom mfp-iframe vidwrap" data-type="iframe"
-                           href="https://www.youtube.com/embed/B7r7YY_EO0A?showinfo=0"></a>
+                        <iframe width="560" height="500"
+                                src="https://www.youtube.com/embed/{{$about[0]->embed_video_path}}" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
                     </div>
-                    <div class="text_timonial">
-                        <div class="testimonial_owl text_style">
-                            <div class="item">
-                                <div class="testimonial_text">
-                                    <div class="testimonial_text_inner">
-                                        <p>
-                                            They are passionate about there careers and helping you get a kick-start in
-                                            yours. People and there prosperity are at the heart and soul of everythinng
-                                            we do. We believe education unlocks unlimited potential in people to be
-                                            exceptional.
-                                        </p>
-                                        <h2>Josh Coulding</h2>
-                                        <h5>Project Management Guider</h5>
-                                    </div>
-                                </div>
-                                <div class="test_thumb"><img src="img/home2/testimonial-1.png" alt=""/></div>
-                            </div>
-                            <div class="item">
-                                <div class="testimonial_text">
-                                    <div class="testimonial_text_inner">
-                                        <p>
-                                            They are passionate about there careers and helping you get a kick-start in
-                                            yours. People and there prosperity are at the heart and soul of everythinng
-                                            we do. We believe education unlocks unlimited potential in people to be
-                                            exceptional.
-                                        </p>
-                                        <h2>Josh Coulding</h2>
-                                        <h5>Project Management Guider</h5>
-                                    </div>
-                                </div>
-                                <div class="test_thumb"><img src="img/home2/testimonial-2.png" alt=""/></div>
-                            </div>
-                            <div class="item">
-                                <div class="testimonial_text">
-                                    <div class="testimonial_text_inner">
-                                        <p>
-                                            They are passionate about there careers and helping you get a kick-start in
-                                            yours. People and there prosperity are at the heart and soul of everythinng
-                                            we do. We believe education unlocks unlimited potential in people to be
-                                            exceptional.
-                                        </p>
-                                        <h2>Josh Coulding</h2>
-                                        <h5>Project Management Guider</h5>
-                                    </div>
-                                </div>
-                                <div class="test_thumb"><img src="img/home2/testimonial-3.png" alt=""/></div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
     <!--end about  area -->
-
     <!--start courses  area -->
     <div class="courses_area home-2">
         <div class="container">
@@ -231,21 +190,21 @@
                     <div class="row">
                         <!-- single item priging -->
                         @foreach($news as $new)
-                        <div class="col-md-6 col-sm-6 col-lg-6">
-                            <div class="priging_item">
-                                <div class="priging_thumb">
-                                    <a href="single-store.html">
-                                        <div class="atvImg">
-                                            <div class="atvImg-layer" data-img="img/home1/book/2.png"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="priging_content">
-                                    <h2>Dont Make me think</h2>
+                            <div class="col-md-6 col-sm-6 col-lg-6">
+                                <div class="priging_item">
+                                    <div class="priging_thumb">
+                                        <a href="single-store.html">
+                                            <div class="atvImg">
+                                                <div class="atvImg-layer" data-img="img/home1/book/2.png"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="priging_content">
+                                        <h2>Dont Make me think</h2>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- end single item priging -->
+                            <!-- end single item priging -->
                         @endforeach
                     </div>
                 </div>
@@ -268,15 +227,18 @@
             <div class="row">
                 <!--start single news  item -->
                 @foreach($news as $new)
-                    <div  style="width: 100%" class="col-md-3 col-sm-6">
+                    <div style="width: 100%" class="col-md-3 col-sm-6">
                         <div class="single_news_item">
                             <div class="news_thumb">
-                                <a href="#"><img style="width: 280px; height: 200px;" src="{{$new->photo_path}}" alt=""/></a>
+                                <a href="#"><img style="width: 280px; height: 200px;" src="{{$new->photo_path}}"
+                                                 alt=""/></a>
                             </div>
                             <div class="news_content">
                                 <h2><a href="#">{{$new->title_eng}}</a></h2>
                                 <p class="date">{{$new->created_at}}</p>
-                                <h2><a href="single-blog.html">  {{ Str::limit(strip_tags($new->description_eng, 100)) }} </a></h2>
+                                <h2>
+                                    <a href="single-blog.html">  {{ Str::limit(strip_tags($new->description_eng, 100)) }} </a>
+                                </h2>
                             </div>
                         </div>
 

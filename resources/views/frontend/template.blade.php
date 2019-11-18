@@ -25,138 +25,88 @@
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="stylesheet" href="/frontend/css/responsive.css">
     <script src="/frontend/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;58db6a26-9e61-45d4-ab02-0ad0237200c3=<your API-key>"
+            type="text/javascript"></script>
+    <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
-<div class="header_area home-2">
-    <div class="div container">
+<!--start header  area -->
+<div class="header_area">
+    <div class="container">
         <div class="row">
-            <div class="col-md-7">
-                <div class="phone_address clear">
-                    <p class="no-margin">
-                        <small>
-
-                        </small>
-                    </p>
-                </div>
+            <!-- header  logo -->
+            <div class="col-md-4 col-sm-3 col-xs-12">
+                <div class="logo"><a href="/"><img src="frontend/img/logo.png" alt="" /></a></div>
             </div>
-            <div class="col-md-5">
-                <div class="form pull-right">
-                    <div class="language home-2">
-                        <select class="form-lan">
-                            <option value="english" selected>English</option>
-                            <option value="english">Türkçe</option>
-                        </select>
+            <!-- end header  logo -->
+            <div class="col-md-8 col-sm-9 col-xs-12">
+                <div>
+                    <div class="form pull-right">
+                        <div class="language">
+                            <select class="form-lan">
+                                <option value="english" selected>English</option>
+                                <option value="english">Türkçe</option>
+                            </select>
+                        </div>
                     </div>
+
                 </div>
-                <div class="social_icon pull-right">
-                    <p>
-                        <a target="_blank" href="#" class="icon-set"><i class="fa fa-facebook"></i></a>
-                        <a target="_blank" href="#" class="icon-set"><i class="fa fa-twitter"></i></a>
-                        <a target="_blank" href="#" class="icon-set"><i class="fa fa-linkedin"></i></a>
-                    </p>
-                </div>
+
             </div>
         </div>
     </div>
 </div>
 <!--end header  area -->
-<div class="slide_wrap_area">
-    <div class="nav_area home-2">
-        <div class="container">
-            <div class="row">
-                <!--nav item-->
-                <div class="col-md-3 col-sm-3 col-xs-3">
-                    <div class="home2_logo"><a href="index-2.html"><img src="frontend/img/home2/logo-white.png" alt=""/></a>
-                    </div>
-                </div>
-                <div class="col-md-9 col-sm-9 col-xs-9">
-                    <!--  nav menu-->
-                    <nav class="menu">
-                        <ul class="navid pull-left">
-                            <li><a href="index.html">Home <i class="fa fa-angle-down"></i></a>
-                                <ul>
-                                    <li><a href="index-2.html">Home 2</a></li>
-                                    <li><a href="index-3.html">Home 3</a></li>
-                                    <li><a href="index-4.html">Home Box Layout</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Courses <i class="fa fa-angle-down"></i></a>
-                                <ul>
-                                    <li><a href="courses-item-1.html">Courses List layout 1</a></li>
-                                    <li><a href="courses-item-2.html">Courses List layout 2 </a></li>
-                                    <li><a href="single-courses.html">Course Item </a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Pages <i class="fa fa-angle-down"></i></a>
-                                <ul>
-                                    <li><a href="faq.html">FAQ </a></li>
-                                    <li><a href="login.html">Login Page </a></li>
-                                    <li><a href="video.html">Video Gallery </a></li>
-                                    <li><a href="gellary.html">Image Gallery </a></li>
-                                    <li><a href="about-page.html">About Page </a></li>
-                                    <li><a href="news-bulletin.html">News Bulletin </a></li>
-                                    <li><a href="registration.html">Registration Form</a></li>
-                                    <li><a href="contract.html">Contacts </a></li>
-                                    <li><a href="404.html">404 </a></li>
-                                </ul>
-                            </li>
-                            <li><a href="store.html">Store</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="about-page.html">About Us</a></li>
-                            <li><a href="contract.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                    <!--end  nav menu-->
-                    <div class="search pull-right">
-                        <div class="search-box">
-                            <input type="text" class="form_control" placeholder="search..."/>
-                            <span class="search-open"><i class="fa fa-search search"></i><i
-                                    class="fa fa-close hidden close"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <!--end nav item -->
-            </div>
-        </div>
-
-    </div>
-    <!-- HOME SLIDER -->
-    <div class="slider-wrap home-1-slider" id="home">
-        <div id="mainSlider" class="nivoSlider slider-image">
-            <img src="/frontend/img/home1/s1.jpg" alt="main slider" title="#htmlcaption1"/>
-            <img src="/frontend/img/home1/s5.jpg" alt="main slider" title="#htmlcaption2"/>
-        </div>
-        <div id="htmlcaption1" class="nivo-html-caption slider-caption-1">
-            <div class="slider-progress"></div>
-
-            <div id="htmlcaption2" class="nivo-html-caption slider-caption-2">
-                <div class="slider-progress"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="slide1-text slide-text">
-                                <div class="middle-text">
-                                    <div class="left_sidet1">
-                                        <div class="cap-title wow slideInRight" data-wow-duration=".9s"
-                                             data-wow-delay="0s">
-                                            <h1>Multilingual Supported <br/>with RTL</h1>
-                                        </div>
-                                        <div class="cap-dec wow slideInRight" data-wow-duration="1.1s"
-                                             data-wow-delay="0s">
-                                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. .</h2>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<!--Start nav  area -->
+<div class="nav_area">
+    <div class="container">
+        <div class="row">
+            <!--nav item-->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <!--  nav menu-->
+                <nav class="menu">
+                    <ul class="navid pull-left">
+                        <li><a href="/">Home </a></li>
+                        <li><a href="#">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul>
+                                <li><a href="faq.html">FAQ </a></li>
+                                <li><a href="login.html">Login Page  </a></li>
+                                <li><a href="gellary.html">Image Gallery </a></li>
+                                <li><a href="about-page.html">About Page </a></li>
+                                <li><a href="news-bulletin.html">News Bulletin  </a></li>
+                                <li><a href="registration.html">Registration Form</a></li>
+                                <li><a href="contract.html">Contacts </a></li>
+                                <li><a href="404.html">404 </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/about">Hakkımızda</a></li>
+                        <li><a href="/contract">İletişim</a></li>
+                    </ul>
+                </nav>
+                <!--end  nav menu-->
+                <div class="search pull-right">
+                    <div class="search-box">
+                        <input type="text" class="form_control" placeholder="search" />
+                        <span class="search-open"><i class="fa fa-search search"></i><i class="fa fa-close hidden close"></i></span>
                     </div>
                 </div>
             </div>
+            <!--end nav item -->
         </div>
     </div>
+
 </div>
+<!--end nav  area -->
+
 @yield('content')
 
 <!-- footer bottom area -->
@@ -166,12 +116,12 @@
             <div class=" col-sm-6 col-md-6 col-lg-6">
                 <div class="footer_text">
                     <p>
-                        <a href="https://ydyazilim.com/tr/">YD Yazılım</a>  © 2019 <br> Tüm Hakları Saklıdır..
+                        <a href="https://ydyazilim.com/tr/">YD Yazılım</a> © 2019 <br> Tüm Hakları Saklıdır..
                     </p>
                 </div>
             </div>
             <div class=" col-sm-6 col-md-6 col-lg-6">
-                <p class="text-right">Design By <a href="https://www.linkedin.com/in/halilomergurkan/">Halil Ömer GÜRKAN</a></p>
+
             </div>
         </div>
     </div>
@@ -188,6 +138,35 @@
 <script type="text/javascript" src="/frontend/venobox/venobox.min.js"></script>
 <script src="/frontend/js/plugins.js"></script>
 <script src="/frontend/js/main.js"></script>
+
+<script src="event_rollover.js" type="text/javascript"></script>
+<script>
+    ymaps.ready(init);
+
+    function init() {
+        var myMap = new ymaps.Map('map', {
+                center: [39.8921689, 32.7609139],
+                zoom: 13
+            }, {
+                searchControlProvider: 'yandex#search'
+            }),
+            myPlacemark = new ymaps.Placemark(myMap.getCenter());
+
+        myMap.geoObjects.add(myPlacemark);
+
+        myPlacemark.events
+            .add('mouseenter', function (e) {
+                /**
+                 * A reference to the object that triggered the event;
+                 * you can get it from the 'target' field.
+                 */
+                e.get('target').options.set('preset', 'islands#greenIcon');
+            })
+            .add('mouseleave', function (e) {
+                e.get('target').options.unset('preset');
+            });
+    }
+</script>
 <!--End script  area -->
 </body>
 </html>

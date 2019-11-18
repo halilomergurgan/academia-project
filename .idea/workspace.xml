@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="915e71dc-a4a6-4bb3-9a37-85b8ef216c01" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/about.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +41,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontendController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="401">
@@ -1071,15 +1065,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/content.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="552">
+              <caret line="114" column="54" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
               <folding>
                 <element signature="e#55#1511#0#HTML" />
                 <element signature="e#381#417#0#HTML" expanded="true" />
                 <element signature="e#1244#1267#0#HTML" expanded="true" />
+                <element signature="e#4829#4852#0#HTML" expanded="true" />
+                <element signature="e#5126#5149#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1135,7 +1131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>map_areamap_area</find>
       <find>goo</find>
       <find>style</find>
       <find>goog</find>
@@ -1165,6 +1160,7 @@
       <find>slider-wrap home-1-slider</find>
       <find>Multilingual</find>
       <find>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur</find>
+      <find>Our Latest</find>
     </findStrings>
     <replaceStrings>
       <replace>$courses</replace>
@@ -1231,8 +1227,8 @@
         <option value="$USER_HOME$/Desktop/academia-education-bootstrap-template/academia/about-page.html" />
         <option value="$PROJECT_DIR$/resources/views/frontend/about.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/template.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/frontend/content.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/content.blade.php" />
       </list>
     </option>
   </component>
@@ -1464,12 +1460,12 @@
       <workItem from="1572858697267" duration="28269000" />
       <workItem from="1573543061700" duration="3126000" />
       <workItem from="1573547736129" duration="97000" />
-      <workItem from="1573547848494" duration="22954000" />
+      <workItem from="1573547848494" duration="23294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118828000" />
+    <option name="totallyTimeSpent" value="119168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -3008,24 +3004,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/content.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#55#1511#0#HTML" />
-            <element signature="e#381#417#0#HTML" expanded="true" />
-            <element signature="e#1244#1267#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontendController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="18" column="82" selection-start-line="18" selection-start-column="82" selection-end-line="18" selection-end-column="82" />
           <folding>
             <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/content.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="114" column="54" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
+          <folding>
+            <element signature="e#55#1511#0#HTML" />
+            <element signature="e#381#417#0#HTML" expanded="true" />
+            <element signature="e#1244#1267#0#HTML" expanded="true" />
+            <element signature="e#4829#4852#0#HTML" expanded="true" />
+            <element signature="e#5126#5149#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

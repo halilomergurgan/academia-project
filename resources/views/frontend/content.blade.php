@@ -53,7 +53,6 @@
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -84,7 +83,6 @@
                             <div class="courses_content">
                                 <h2><a href="#">{{$course->title_eng}}</a></h2>
                                 {{ Str::limit(strip_tags($course->description_tr, 100)) }}
-                                <a href="#" class="text_uppercase">Read More ...</a>
                             </div>
                         </div>
                     </div>
@@ -98,24 +96,23 @@
     <div class="offer_area home-2">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-lg-6">
-                    <div class="media-box">
-                        <a class="venobox_custom mfp-iframe video-button text-uppercase" data-type="iframe"
-                           href="https://www.youtube.com/embed/JC82Il2cjqA">
-                            <i class="fa fa-play-circle-o"></i>
-                            <span>Watch Video</span>
-                        </a>
+                <div class="col-md-6 col-sm-6">
+                    <div class="video-wrapper pull-right">
+                        <iframe width="560" height="500"
+                                src="https://www.youtube.com/embed/{{$about[0]->embed_video_path}}" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6 col-lg-6">
+                <div class="col-md-6 col-sm-6">
                     <div class="title">
-                        <h3 class="offer-title">
+                        <h3 class="offer-title" style="color: #0F99DE;">
                             Like what you're learning <span> Get started today!</span>
                         </h3>
                     </div>
                     <div class="offer_item">
                         <div class="offer_content">
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            <p style="color: #0F99DE;">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
                                 egestas.</p>
                         </div>
                     </div>
@@ -182,25 +179,26 @@
                         <div class="col-md-12">
                             <div class="title">
                                 <h3 class="module-title title2">
-                                    Our Latest <span>Publications</span>
+                                   Dergilerimiz
                                 </h3>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <!-- single item priging -->
+
                         @foreach($news as $new)
                             <div class="col-md-6 col-sm-6 col-lg-6">
                                 <div class="priging_item">
                                     <div class="priging_thumb">
-                                        <a href="single-store.html">
+                                        <a href="#">
                                             <div class="atvImg">
-                                                <div class="atvImg-layer" data-img="img/home1/book/2.png"></div>
+                                                <div class="atvImg-layer" data-img="{{$new->photo_path}}"></div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="priging_content">
-                                        <h2>Dont Make me think</h2>
+                                        <h2>{{$new->title_tr}}</h2>
                                     </div>
                                 </div>
                             </div>

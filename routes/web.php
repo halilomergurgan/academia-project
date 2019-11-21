@@ -34,6 +34,7 @@ Route::group(array('prefix' => '/'),function ()
     Route::get('/', 'FrontendController@index');
     Route::get('/contact', 'FrontendController@contact');
     Route::get('/about', 'FrontendController@about');
+    Route::get('/post/{id}', 'FrontendController@post');
 });
 
 Auth::routes();

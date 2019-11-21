@@ -52,10 +52,10 @@
                 <div>
                     <div class="form pull-right">
                         <div class="language">
-                            <select class="form-lan">
-                                <option value="english" selected>English</option>
-                                <option value="english">Türkçe</option>
-                            </select>
+{{--                            <select class="form-lan">--}}
+{{--                                <option value="english" selected>English</option>--}}
+{{--                                <option value="english">Türkçe</option>--}}
+{{--                            </select>--}}
                         </div>
                     </div>
 
@@ -76,20 +76,16 @@
                 <nav class="menu">
                     <ul class="navid pull-left">
                         <li><a href="/">Home </a></li>
-                        <li><a href="#">Pages <i class="fa fa-angle-down"></i></a>
+                        @foreach($menus as $key=> $menu)
+                        <li><a href="#">{{$menu->name_tr}} <i class="fa fa-angle-down"></i></a>
                             <ul>
-                                <li><a href="faq.html">FAQ </a></li>
-                                <li><a href="login.html">Login Page  </a></li>
-                                <li><a href="gellary.html">Image Gallery </a></li>
-                                <li><a href="about-page.html">About Page </a></li>
-                                <li><a href="news-bulletin.html">News Bulletin  </a></li>
-                                <li><a href="registration.html">Registration Form</a></li>
-                                <li><a href="contract.html">Contacts </a></li>
-                                <li><a href="404.html">404 </a></li>
+                                <li><a href="/post/{{$menu->post->id}}">{{$menu->post->title_tr}} </a></li>
                             </ul>
+
                         </li>
+                        @endforeach
                         <li><a href="/about">Hakkımızda</a></li>
-                        <li><a href="/contract">İletişim</a></li>
+                        <li><a href="/contact">İletişim</a></li>
                     </ul>
                 </nav>
                 <!--end  nav menu-->
@@ -141,12 +137,13 @@
 
 <script src="event_rollover.js" type="text/javascript"></script>
 <script>
+
     ymaps.ready(init);
 
     function init() {
         var myMap = new ymaps.Map('map', {
-                center: [39.8921689, 32.7609139],
-                zoom: 13
+                center: ["<?php echo $contact[0]->latitude; ?>", "<?php echo $contact[0]->longitude; ?>"],
+                zoom: 16
             }, {
                 searchControlProvider: 'yandex#search'
             }),

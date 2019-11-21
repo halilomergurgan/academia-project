@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Contact;
 use App\Models\Course;
 use App\Models\News;
+use App\Models\Post;
 use App\Models\Slider;
 
 class FrontendController extends Controller
@@ -29,5 +30,13 @@ class FrontendController extends Controller
     {
         $about = About::all();
         return view('frontend.about', compact('about'));
+    }
+
+    public function post($id)
+    {
+
+        $post = Post::find($id);
+
+        return view('frontend.post', compact('about'));
     }
 }

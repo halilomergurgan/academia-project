@@ -20,6 +20,7 @@ class CreateMagazinesTable extends Migration
             $table->longText('description_tr');
             $table->longText('description_eng');
             $table->string('photo_path')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -8,10 +8,10 @@
     Version: 1.0
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-	
+
     *** Theme Default CSS (body, link color, section etc)
 	1. header area css
 	2. nav menu css
@@ -25,7 +25,7 @@
 	10. priging area css
 	11. share area css
 	12.News area css
-	13. footer area css 
+	13. footer area css
 	14. footer bottom css
 	15. banner css
 	16. home 2 css
@@ -100,7 +100,7 @@ small, .small {
   font-size: 85%;
 }
 ul,li,a{
-	font-family: 'Montserrat', sans-serif; 
+	font-family: 'Montserrat', sans-serif;
 }
 .clear{clear:both}
 body {}
@@ -235,7 +235,7 @@ select.form-lan {
   box-shadow: 0 0 2px #01bafd;color:#666;
 }
 .form_control:focus{
-  box-shadow: 0 0 5px #fff;	
+  box-shadow: 0 0 5px #fff;
 }
 .home-3 .form_control{
   box-shadow: 0 0 5px rgb(2, 186, 255);
@@ -277,7 +277,7 @@ color: #333;
 /*3. Slider area css
 /*----------------------------------------*/
 .slide_wrap_area{
-  position:relative;	
+  position:relative;
 }
 .home-2.nav_area {
   left: 0;
@@ -433,7 +433,7 @@ i.nivo-next-icon:hover {
 .slide_ptext{
 font-size: 21px;
 font-weight: 200;
-margin-bottom: 15px;	
+margin-bottom: 15px;
 }
 .slide_readmore {
   background-color: #01bafd;
@@ -499,7 +499,7 @@ about area css
 .module-title{
 font-family: 'Montserrat', sans-serif;
   font-size: 24px; margin-bottom: 25px;
-  font-weight: normal; color: inherit;	
+  font-weight: normal; color: inherit;
 }
 .module-title > span {
   display: block;
@@ -523,7 +523,7 @@ font-family: 'Montserrat', sans-serif;
   -ms-transition: all 0.2s ease-in-out 0s;
   visibility: visible;
   width: 100%;
- margin-bottom:40px; 
+ margin-bottom:40px;
 }
 .video-wrapper .vidwrap::before {
   color: rgba(247, 247, 247, 0.5);
@@ -634,7 +634,7 @@ margin-top: 10px;
 }
 .vedio_tutoria{
  padding: 0px;
-margin-top:20px; 
+margin-top:20px;
 }
 .inner_video {
   padding:20px;
@@ -825,7 +825,7 @@ margin-top: 40px;
   font-weight: bold;
   margin-top: 10px;
   position: relative;
-} 
+}
  .video-button:hover{
 	 color:#fff;
 	 background:transparent;
@@ -895,7 +895,7 @@ priging area css
 }
 .priging_content .store_title{
 	margin-top:-10px;
-} 
+}
 .label_right{
 	margin-left:10px;
 }
@@ -1030,7 +1030,7 @@ box-shadow: 0 1px 2px rgba(43, 59, 93, 0.29), 0 0 13px rgba(43, 59, 93, 0.29);
 }
 
 /*================
-footer area css 
+footer area css
 ===================*/
 .footer_area {
   background: #2d2d2d none repeat scroll 0 0;
@@ -1129,7 +1129,7 @@ margin-left: 20px;
 .banner_area {
   background: #f7f7f7 url("img/home3/banner-bg.png") no-repeat scroll 100% 0;
   padding-bottom:90px;
-  padding-top: 90px; 
+  padding-top: 90px;
   background-size:cover;
 }
 /*home 2 css*/
@@ -1163,7 +1163,7 @@ margin-left: 20px;
 }
 .text_timonial{
 	background:rgb(130,181,63);
-	clear:both;	
+	clear:both;
 }
 .text_timonial:after{
 	content:"";
@@ -1256,11 +1256,11 @@ margin-left: 20px;
   background-color: #4d4d4d;
   background-image: url("img/home3/slide1.jpg");
   background-size: cover;
-  color: #ffffff;	
+  color: #ffffff;
 }
 .slide_thumb3{
   background: rgba(0, 0, 0, 0.9) none repeat scroll 0 0;
-  padding: 75px 50px;	
+  padding: 75px 50px;
 }
 .slide_thumb3 h1{
 	font-size:65px;color:#fff;font-weight:bold;
@@ -1289,7 +1289,7 @@ border-radius: 0;
 font-size: 18px;
 height: 45px;
 line-height: 1.33;
-padding: 10px 16px;	
+padding: 10px 16px;
 border:none;
 color:#000;
 }
@@ -1311,7 +1311,7 @@ background-image: url("img/home3/campaign.png"), linear-gradient(to right, #f7f7
 background-origin: padding-box;
 background-position: 0 0;
 background-repeat: repeat;
-background-size: auto auto;	
+background-size: auto auto;
 }
 /*courses*/
 .lead {
@@ -1333,7 +1333,7 @@ padding: 6px 12px;
 	box-shadow: 0 1px 2px rgba(43, 59, 93, 0.29), 0 0 13px rgba(43, 59, 93, 0.29);
 background-color: #e6e6e6;
 border-color: #adadad;
-color: #333333;	
+color: #333333;
 }
 /*faq area css*/
 .faq_area{
@@ -1400,7 +1400,7 @@ font-size: 65px;
 font-weight: bold;
 }
 .not_found h2{
-font-size:39px; 	
+font-size:39px;
 color:#636363;
 }
 /*about top banner page css*/
@@ -1456,11 +1456,11 @@ banner area css
 .banar_area{}
 .single_banar{
 background: #01bafd;
-padding:50px 0px; 
+padding:50px 0px;
 }
 .single_banar:after{
-content:""; 
-display:block; 
+content:"";
+display:block;
 clear:both;
 }
 .banner_item_area > div:nth-child(1) .single_banar{
@@ -1479,7 +1479,7 @@ clear:both;
 .banar_icon{
 width:20%;
 float:left;
-text-align:center; 
+text-align:center;
 
 }
 .banar_icon i{
@@ -1519,7 +1519,7 @@ color:#fff;
 }
 .print > ul{
   box-shadow: 0 1px 2px rgba(43, 59, 93, 0.4);
- 
+
   position: absolute;
   right: 0;
   top: 5px;
@@ -1541,14 +1541,14 @@ color:#fff;
 
 }
 .print ul li:hover ul{
-display:block;	
+display:block;
 z-index:99;
 }
 .print ul ul li:hover{
 	background:#f5f5f5;
 }
 .print ul ul li a{
-	display:block;padding: 8px 15px;	
+	display:block;padding: 8px 15px;
 }
 .print span{
 	margin-left:5px;
@@ -1582,7 +1582,7 @@ z-index:99;
 .blog-title{
 font-family: 'Montserrat', sans-serif;
   font-size: 23px; margin-bottom: 30px;
-  font-weight: normal; color: inherit;	
+  font-weight: normal; color: inherit;
 }
 .blog-title > span {
   display: block;
@@ -1624,7 +1624,7 @@ font-family: 'Montserrat', sans-serif;
 .tags > li > a{  padding: 5px;display:block;color:#4d4d4d;transition:.5s;}
 .tags > li > a:hover{
    background: #0182b1 none repeat scroll 0 0;
-    color: #ffffff;		
+    color: #ffffff;
 }
 .news_content.news_buletin_pra > h1 {
 margin: -6px 0 0;
@@ -1697,7 +1697,7 @@ textarea:focus,.i_box input:focus{
 }
 .image_thumb3{
   margin-bottom: 60px;
-    text-align: center;	
+    text-align: center;
 }
 .image_thumb3 img{
    display: inline-block;
@@ -1757,7 +1757,7 @@ text-transform: uppercase;
 .single_courcse_titles{
 	font-size:24px;font-weight:bold; color: #636363;
 }
-/*----------------------------------- 
+/*-----------------------------------
  breadcrumb css
 -------------------------------------*/
 .breadcrumb-area {
@@ -1933,7 +1933,7 @@ transition: all 0.2s ease-in-out 0s;
 overflow:hidden;
 }
 .apply{
-	
+
 }
 .apply_text {
   font-size: 20px;
@@ -1990,7 +1990,7 @@ overflow:hidden;
 }
 .couse_pra{
 font-size: 18px;
-font-weight: bold;	
+font-weight: bold;
 }
 /*ow carsol css edit style for model_owl*/
 

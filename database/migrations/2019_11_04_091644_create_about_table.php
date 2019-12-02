@@ -19,7 +19,7 @@ class CreateAboutTable extends Migration
             $table->text('title_eng');
             $table->longText('description_tr');
             $table->longText('description_eng');
-            $table->string('embed_video_path')->nullable();
+            $table->string('embed_video_path',500)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

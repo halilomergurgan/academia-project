@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Contact;
 use App\Models\Course;
+use App\Models\Magazine;
 use App\Models\News;
 use App\Models\Post;
 use App\Models\Slider;
@@ -17,7 +18,8 @@ class FrontendController extends Controller
         $news = News::all();
         $sliders = Slider::all();
         $about = About::all();
-        return view('frontend.content', compact('courses', 'news','sliders','about'));
+        $magazines = Magazine::all();
+        return view('frontend.content', compact('courses', 'news','sliders','about','magazines'));
     }
 
     public function contact()
@@ -34,9 +36,17 @@ class FrontendController extends Controller
 
     public function post($id)
     {
-
         $post = Post::find($id);
-
-        return view('frontend.post', compact('about'));
+        return view('frontend.post', compact('post'));
+    }
+    public function course($id)
+    {
+        $course = Course::find($id);
+        return view('frontend.course', compact('course'));
+    }
+    public function journal($id)
+    {
+        $journal = Magazine::find($id);
+        return view('frontend.journal', compact('journal'));
     }
 }

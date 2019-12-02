@@ -17,12 +17,6 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label">English Title :</label>
-                        <div class="controls">
-                            <input type="text" class="span11"  name="title_eng" value="{{$sliders->title_eng}}"/>
-                        </div>
-                    </div>
-                    <div class="control-group">
                         <label class="control-label">Photo</label>
                         <div class="controls">
                             <input type="file" class="span11" name="photo_path"  value="{{$sliders->photo_path}}"/>

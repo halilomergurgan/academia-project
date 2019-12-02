@@ -13,4 +13,9 @@ class SubMenu extends Model
     {
         return $this->belongsTo(Menu::class, 'menu_id', 'id');
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'submenu_id', 'id');
+    }
 }

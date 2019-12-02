@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Magazine;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
 class MagazineController extends Controller
 {
@@ -42,7 +44,8 @@ class MagazineController extends Controller
             'title_eng' => 'required',
             'description_tr' => 'required',
             'description_eng' => 'required',
-            'photo_path' => 'nullable'
+            'photo_path' => 'nullable',
+            'file' => 'nullable'
         ]);
 
         $magazine = new Magazine();
@@ -51,10 +54,19 @@ class MagazineController extends Controller
         $magazine->description_tr = request('description_tr');
         $magazine->description_eng = request('description_eng');
 
-        if ($request->hasFile('photo_path')) {
-            $this->validate(request(), array('photo_path' => 'image|mimes:png,jpg,jpeg,gif'));
-            $path = Storage::disk('local')->put('/public/magazines', request()->file('photo_path'));
-            $magazine->photo_path = $path;
+        $path = Storage::disk('local')->putFileAs('/public/magazines', $request->file('file'));
+        dd($path);
+        // $magazine->photo_path = $path;
+        $magazine->file = $path;
+        if ($request->hasFile('photo_path' || $request->hasFile('file'))) {
+
+            //$this->validate(request(), array('photo_path' => 'image|mimes:png,jpg,jpeg,gif'));
+            //$this->validate(request(), array('file' => 'required|max:10000|mimes:doc,docx'));
+            //$path = Storage::disk('local')->put('/public/magazines', request()->file('file'));
+
+
+            //$result = Storage::putFileAs($path, $file, $fileName);
+
         }
         $magazine->save();
 

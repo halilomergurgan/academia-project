@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->bigInteger('menu_id')->unsigned();
             $table->bigInteger('submenu_id')->unsigned();
             $table->string('photo_path')->nullable();
-            $table->string('embed_video_path')->nullable();
+            $table->string('embed_video_path',500)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

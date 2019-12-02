@@ -23,17 +23,6 @@
                         @endif
                     </div>
                     <div class="control-group">
-                        <label class="control-label">English Title :</label>
-                        <div class="controls">
-                            <input type="text" class="span11"  name="title_eng" value="{{old('title_eng')}}" />
-                        </div>
-                        @if($errors->has('title_eng'))
-                            <p class="alert alert-danger">
-                                {{$errors->first('title_eng')}}
-                            </p>
-                        @endif
-                    </div>
-                    <div class="control-group">
                         <label class="control-label">Photo</label>
                         <div class="controls">
                             <input type="file" class="span11" name="photo_path" />

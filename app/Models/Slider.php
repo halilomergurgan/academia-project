@@ -17,9 +17,5 @@ class Slider extends Model
     {
         return Storage::url($value);
     }
-
-    public function getDescriptionENForDatatableAttribute()
-    {
-        return Str::limit($this->description_eng, 100);
-    }
+    
 }

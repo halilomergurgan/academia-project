@@ -9,6 +9,11 @@ class Menu extends Model
 {
     use SoftDeletes;
 
+    public function submenus()
+    {
+        return $this->hasMany(SubMenu::class, 'menu_id', 'id');
+    }
+
     public function post()
     {
         return $this->belongsTo(Post::class, 'id', 'menu_id');

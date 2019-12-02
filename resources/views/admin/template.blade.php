@@ -58,7 +58,7 @@
         <li><a href="{{ url('/admin/news')}}"><span>News/Haberler</span></a></li>
         <li><a href="{{ url('/admin/slider')}}"><span>Slider</span></a></li>
         <li><a href="{{ url('/admin/courses')}}"><span>Courses/Eğitimler</span></a></li>
-        <li><a href="{{url('/admin/magazines')}}"><span>Magazines/Dergiler</span></a></li>
+        <li><a href="{{url('/admin/magazines')}}"><span>Magazines/Bültenler/Dergiler</span></a></li>
         <li><a href="{{url('/admin/posts')}}"><span>Posts/Dinamik Sayfalar</span></a></li>
         <li><a href="{{url('/admin/about')}}"><span>About/Hakkımızda</span></a></li>
         <li><a href="{{url('/admin/contact')}}"><span>Contact/İletişim</span></a></li>

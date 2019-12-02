@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\About;
 use App\Models\Contact;
 use App\Models\Menu;
 use App\Models\Post;

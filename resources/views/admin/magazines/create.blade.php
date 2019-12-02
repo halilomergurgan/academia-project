@@ -56,6 +56,17 @@
                         @endif
                     </div>
                     <div class="control-group">
+                        <label class="control-label">Dosya(Word-Pdf)</label>
+                        <div class="controls">
+                            <input type="file" class="span11" name="file" />
+                            @if($errors->has('file'))
+                                <p class="alert alert-danger">
+                                    {{$errors->first('file')}}
+                                </p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="control-group">
                         <label class="control-label">Photo</label>
                         <div class="controls">
                             <input type="file" class="span11" name="photo_path" />

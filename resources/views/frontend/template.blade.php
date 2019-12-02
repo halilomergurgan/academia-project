@@ -45,17 +45,17 @@
         <div class="row">
             <!-- header  logo -->
             <div class="col-md-4 col-sm-3 col-xs-12">
-                <div class="logo"><a href="/"><img src="frontend/img/logo.png" alt="" /></a></div>
+                <div class="logo"><a href="/"><img src="/frontend/img/logo.png" alt=""/></a></div>
             </div>
             <!-- end header  logo -->
             <div class="col-md-8 col-sm-9 col-xs-12">
                 <div>
                     <div class="form pull-right">
                         <div class="language">
-{{--                            <select class="form-lan">--}}
-{{--                                <option value="english" selected>English</option>--}}
-{{--                                <option value="english">Türkçe</option>--}}
-{{--                            </select>--}}
+                            {{--                            <select class="form-lan">--}}
+                            {{--                                <option value="english" selected>English</option>--}}
+                            {{--                                <option value="english">Türkçe</option>--}}
+                            {{--                            </select>--}}
                         </div>
                     </div>
 
@@ -75,26 +75,28 @@
                 <!--  nav menu-->
                 <nav class="menu">
                     <ul class="navid pull-left">
-                        <li><a href="/">Home </a></li>
-                        @foreach($menus as $key=> $menu)
-                        <li><a href="#">{{$menu->name_tr}} <i class="fa fa-angle-down"></i></a>
-                            <ul>
-                                <li><a href="/post/{{$menu->post->id}}">{{$menu->post->title_tr}} </a></li>
-                            </ul>
+                        <li><a href="/">Anasayfa </a></li>
+                        @foreach($_navbar as $key=> $menu)
+                            <li><a href="#">{{$menu->name_tr}} <i class="fa fa-angle-down"></i></a>
+                                <ul>
+                                    @foreach($menu->submenus as $key2 => $submenu)
+                                        <li><a href="">{{$submenu->name_tr}} </a>
+                                            <ul class="navid pull-left">
+                                                @foreach($submenu->posts as $key3 => $post)
+                                                    <li><a href="/post/{{$post->id}}">{{$post->title_tr}} </a></li>
+                                                    <li></li>
+                                                @endforeach
+                                            </ul>
 
-                        </li>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
                         @endforeach
                         <li><a href="/about">Hakkımızda</a></li>
                         <li><a href="/contact">İletişim</a></li>
                     </ul>
                 </nav>
-                <!--end  nav menu-->
-                <div class="search pull-right">
-                    <div class="search-box">
-                        <input type="text" class="form_control" placeholder="search" />
-                        <span class="search-open"><i class="fa fa-search search"></i><i class="fa fa-close hidden close"></i></span>
-                    </div>
-                </div>
             </div>
             <!--end nav item -->
         </div>

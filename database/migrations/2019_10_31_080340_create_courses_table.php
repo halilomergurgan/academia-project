@@ -20,7 +20,7 @@ class CreateCoursesTable extends Migration
             $table->longText('description_tr');
             $table->longText('description_eng');
             $table->string('photo_path')->nullable();
-            $table->string('embed_video_path')->nullable();
+            $table->string('embed_video_path',500)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

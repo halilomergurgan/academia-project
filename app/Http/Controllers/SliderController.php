@@ -40,14 +40,11 @@ class SliderController extends Controller
     {
         $request->validate([
             'title_tr' => 'required',
-            'title_eng' => 'required',
             'photo_path' => 'required'
         ]);
 
         $slider = new Slider();
         $slider->title_tr = request('title_tr');
-        $slider->title_eng = request('title_eng');
-
         if ($request->hasFile('photo_path')) {
             $this->validate(request(), array('photo_path' => 'image|mimes:png,jpg,jpeg,gif'));
             $path = Storage::disk('local')->put('/public/slider', request()->file('photo_path'));
@@ -99,7 +96,6 @@ class SliderController extends Controller
     {
         $sliders = Slider::find($id);
         $sliders->title_tr = $request->input('title_tr');
-        $sliders->title_eng = request('title_eng');
         if ($request->hasFile('photo_path')) {
             $this->validate(request(), array('photo_path' => 'image|mimes:png,jpg,jpeg,gif'));
             $path = Storage::disk('local')->put('/public/slider', request()->file('photo_path'));

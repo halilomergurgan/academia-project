@@ -17,7 +17,6 @@
                 <thead>
                 <tr>
                     <th>Turkish Title</th>
-                    <th>English Title</th>
                     <th>Photo</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -29,7 +28,6 @@
 
                     <tr class="gradeX">
                         <td>{{$slider->title_tr}}</td>
-                        <td>{{$slider->title_eng}}</td>
                         <td><a href="{{$slider->photo_path}}" target="_blank"><img src="{{$slider->photo_path}}" height="100" width="100"></a></td>
                         <td class="center"><a href="{{route('slider.edit',$slider->id)}}" class="btn btn-success btn-mini">Edit</a>
                         </td>

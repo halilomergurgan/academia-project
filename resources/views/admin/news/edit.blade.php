@@ -17,22 +17,9 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label">English Title :</label>
-                        <div class="controls">
-                            <input type="text" class="span11"  name="title_eng" value="{{$news->title_eng}}"/>
-                        </div>
-                    </div>
-                    <div class="control-group">
                         <label class="control-label">Turkish Description</label>
                         <div class="controls">
                             {{ Form::textarea( 'description_tr', $news->description_tr, array('id' => 'description_tr'))}}
-
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">English Description</label>
-                        <div class="controls">
-                            {{ Form::textarea( 'description_eng', $news->description_eng, array('id' => 'description_eng'))}}
 
                         </div>
                     </div>
@@ -61,6 +48,11 @@
 @endsection
 
 @section('js')
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>tinymce.init({selector:'textarea'});</script>
+    <script src="https://cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'description_tr' );
+    </script>
+    <script>
+        CKEDITOR.replace( 'description_eng' );
+    </script>
 @endsection

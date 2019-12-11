@@ -118,8 +118,8 @@ header area css
 =====================*/
 .header_area{
 	  color: #636363;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  /*padding-bottom: 20px;*/
+  /*padding-top: 20px;*/
   background:#fff;
 }
 .social_icon{margin-right:10px;}
@@ -152,7 +152,12 @@ select.form-lan {
 /*====================
 2. nav menu css
 =====================*/
-.nav_area {background:#141414;} .menu ul {
+.nav_area {
+    background:#141414;
+    height: 60px;
+
+
+} .menu ul {
 }
 .menu ul li {
     float:left;
@@ -288,7 +293,7 @@ color: #333;
   background:transparent;
 }
 .slider-wrap.home-1-slider {
-  height: 600px;
+  height: 500px;
   overflow: hidden;
 }
 .nivo-caption {
@@ -857,7 +862,7 @@ priging area css
   border-color: #01a7e4;
   color: #ffffff;
   display: inline-block;
-  padding: 10px 30px;
+  padding: 10px 60px;
   text-transform: uppercase;
   transition:1s;
     -webkit-transition:1s;

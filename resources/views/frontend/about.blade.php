@@ -25,14 +25,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="video-wrapper pull-right">
-                        <iframe width="560" height="500"
-                                src="https://www.youtube.com/embed/{{$about[0]->embed_video_path}}" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
+{{--                <div class="col-md-6 col-sm-6">--}}
+{{--                    <div class="video-wrapper pull-right">--}}
+{{--                        <iframe width="560" height="500"--}}
+{{--                                src="https://www.youtube.com/embed/{{$about[0]->embed_video_path}}" frameborder="0"--}}
+{{--                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"--}}
+{{--                                allowfullscreen></iframe>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
             </div>
         </div>

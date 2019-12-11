@@ -40,9 +40,9 @@ class NewsController extends Controller
     {
         $request->validate([
             'title_tr' => 'required',
-            'title_eng' => 'required',
+            'title_eng' => 'nullable',
             'description_tr' => 'required',
-            'description_eng' => 'required',
+            'description_eng' => 'nullable',
             'photo_path' => 'required'
         ]);
 

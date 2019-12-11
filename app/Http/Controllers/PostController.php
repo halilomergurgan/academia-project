@@ -29,14 +29,14 @@ class PostController extends Controller
      */
     public function create()
     {
-            try {
-                $menus = Menu::all();
-                $subMenus = SubMenu::all();
-                return view('admin.posts.create', compact('menus', 'subMenus'));
-            } catch (ModelNotFoundException $exception) {
-                return redirect()->action('PostController@index');
-            }
+        try {
+            $menus = Menu::all();
+            $subMenus = SubMenu::all();
+            return view('admin.posts.create', compact('menus', 'subMenus'));
+        } catch (ModelNotFoundException $exception) {
+            return redirect()->action('PostController@index');
         }
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -48,9 +48,9 @@ class PostController extends Controller
     {
         $request->validate([
             'title_tr' => 'required',
-            'title_eng' => 'required',
+            'title_eng' => 'nullable',
             'description_tr' => 'required',
-            'description_eng' => 'required',
+            'description_eng' => 'nullable',
             'menu_id' => 'required|exists:menus,id',
             'submenu_id' => 'required|exists:sub_menus,id',
             'photo_path' => 'nullable',
@@ -107,7 +107,7 @@ class PostController extends Controller
             $posts = Post::findOrFail($id);
             return view('admin.posts.edit', compact('posts', 'subMenus', 'menus'));
         } catch (ModelNotFoundException $exception) {
-            return redirect()->action('SubMenuController@index');
+            return redirect()->action('PostController@index');
         }
     }
 

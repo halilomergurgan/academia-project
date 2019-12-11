@@ -15,9 +15,7 @@
                 <thead>
                 <tr>
                     <th>Turkish Title</th>
-                    <th>English Title</th>
                     <th>Description TR</th>
-                    <th>Description ENG</th>
                     <th>Photo</th>
                     <th>Embed Video Path</th>
                     <th>Edit</th>
@@ -29,17 +27,14 @@
                 @foreach($courses as $course)
                     <tr class="gradeX">
                         <td>{{$course->title_tr}}</td>
-                        <td>{{$course->title_eng}}</td>
                         <td>{{ Str::limit($course->description_tr, 100) }}</td>
-                        <td>{{ Str::limit($course->description_eng, 100)}}</td>
                         <td><a href="{{$course->photo_path}}" target="_blank"><img src="{{$course->photo_path}}"
                                                                                    height="100" width="100"></a></td>
                         <td>
-{{--                            <iframe width="250" height="200"--}}
-{{--                                    src="https://www.youtube.com/embed/{{$course->embed_video_path}}" frameborder="0"--}}
-{{--                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"--}}
-{{--                                    allowfullscreen></iframe>--}}
-                            <iframe width="250" height="200" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FTasteLifeOfficial%2Fvideos%2F458846798367989%2F&show_text=0&width=476" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                            <iframe width="250" height="200"
+                                    src="https://www.youtube.com/embed/{{$course->embed_video_path}}" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
                         </td>
                         <td class="center"><a href="{{route('courses.edit',$course->id)}}"
                                               class="btn btn-success btn-mini">Edit</a>

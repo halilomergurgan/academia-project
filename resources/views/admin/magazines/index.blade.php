@@ -17,10 +17,9 @@
                 <thead>
                 <tr>
                     <th>Turkish Title</th>
-                    <th>English Title</th>
                     <th>Description TR</th>
-                    <th>Description ENG</th>
                     <th>Photo</th>
+                    <th>File</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -30,10 +29,10 @@
                 @foreach($magazines as $magazine)
                     <tr class="gradeX">
                         <td>{{$magazine->title_tr}}</td>
-                        <td>{{$magazine->title_eng}}</td>
                         <td>{{ Str::limit($magazine->description_tr, 100) }}</td>
-                        <td>{{ Str::limit($magazine->description_eng, 100)}}</td>
                         <td><a href="{{$magazine->photo_path}}" target="_blank"><img src="{{$magazine->photo_path}}"
+                                                                                     height="100" width="100"></a></td>
+                        <td><a href="{{$magazine->file}}" target="_blank"><img src="{{$magazine->file}}"
                                                                                      height="100" width="100"></a></td>
                         <td class="center"><a href="{{route('magazines.edit',$magazine->id)}}"
                                               class="btn btn-success btn-mini">Edit</a>

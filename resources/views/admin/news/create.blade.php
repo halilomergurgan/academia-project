@@ -23,17 +23,6 @@
                         @endif
                     </div>
                     <div class="control-group">
-                        <label class="control-label">English Title :</label>
-                        <div class="controls">
-                            <input type="text" class="span11"  name="title_eng" value="{{old('title_eng')}}" />
-                        </div>
-                        @if($errors->has('title_eng'))
-                            <p class="alert alert-danger">
-                                {{$errors->first('title_eng')}}
-                            </p>
-                        @endif
-                    </div>
-                    <div class="control-group">
                         <label class="control-label">Turkish Description</label>
                         <div class="controls">
                             <textarea name="description_tr" id="description_tr" >{{old('description_tr')}}</textarea>
@@ -41,17 +30,6 @@
                         @if($errors->has('description_tr'))
                             <p class="alert alert-danger">
                                 {{$errors->first('description_tr')}}
-                            </p>
-                        @endif
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">English Description</label>
-                        <div class="controls">
-                            <textarea name="description_eng" id="description_eng" >{{old('description_eng')}}</textarea>
-                        </div>
-                        @if($errors->has('description_eng'))
-                            <p class="alert alert-danger">
-                                {{$errors->first('description_eng')}}
                             </p>
                         @endif
                     </div>
@@ -82,6 +60,11 @@
 @endsection
 
 @section('js')
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>tinymce.init({selector:'textarea'});</script>
+<script src="https://cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'description_tr' );
+</script>
+<script>
+    CKEDITOR.replace( 'description_eng' );
+</script>
 @endsection

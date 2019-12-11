@@ -17,9 +17,7 @@
                     <th>Turkish Menu Name</th>
                     <th>Turkish Sub Menu Name</th>
                     <th>Turkish Title</th>
-                    <th>English Title</th>
                     <th>Description TR</th>
-                    <th>Description ENG</th>
                     <th>Photo</th>
                     <th>Embed Video Path</th>
                     <th>Edit</th>
@@ -33,9 +31,7 @@
                         <td>{{$post->menu->name_tr}}</td>
                         <td>{{$post->subMenu->name_tr}}</td>
                         <td>{{$post->title_tr}}</td>
-                        <td>{{$post->title_eng}}</td>
                         <td>{{ Str::limit($post->description_tr, 100) }}</td>
-                        <td>{{ Str::limit($post->description_eng, 100)}}</td>
                         <td><a href="{{$post->photo_path}}" target="_blank"><img src="{{$post->photo_path}}"
                                                                                    height="100" width="100"></a></td>
                         <td>

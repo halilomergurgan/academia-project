@@ -1,36 +1,59 @@
 @extends('frontend.template')
 
 @section('content')
-    <div class="slide_wrap_area">
-        <!-- HOME SLIDER -->
-        <div class="slider-wrap home-1-slider" id="home">
-            <div id="mainSlider" class="nivoSlider slider-image">
-                <?php $i = 0; ?>
-                @foreach($sliders as $key => $slider)
-                    <img src="{{$slider->photo_path}}" style="width: 110px; height: 610px;" alt="main slider" title="#htmlcaption{{$i++}}"/>
-                @endforeach
+    </br>
+    <div class="container">
+        @foreach($sliders as $key => $slider)
+            <div class="mySlides">
+                <img src="{{$slider->photo_path}}" style="width:100%; height: 500px;">
             </div>
-            <div id="htmlcaption1" class="nivo-html-caption slider-caption-1">
-                <div class="slider-progress"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="slide1-text slide-text">
-                                <div class="middle-text">
-                                    <div class="left_sidet1">
-                                        <div class="cap-title wow slideInRight" data-wow-duration=".9s"
-                                             data-wow-delay="0s">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        @endforeach
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        <div class="caption-container">
+            <p id="caption"></p>
         </div>
-        <!-- HOME SLIDER -->
+        <div class="row" style="margin-right: -15px; margin-left: 0;">
+            @foreach($sliders as $key => $slider)
+                <div class="column">
+                    <img class="demo cursor" src="{{$slider->photo_path}}" style="width:199px; height: 110px;; "
+                         onclick="currentSlide({{$slider->id}})" alt="{{$slider->title_tr}}">
+                </div>
+            @endforeach
+        </div>
     </div>
+    {{--    <div class="container">--}}
+    {{--        <div id="myCarousel" class="carousel slide" data-ride="carousel">--}}
+    {{--            <!-- Indicators -->--}}
+    {{--            <ol class="carousel-indicators">--}}
+    {{--                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>--}}
+    {{--                <li data-target="#myCarousel" data-slide-to="1"></li>--}}
+    {{--                <li data-target="#myCarousel" data-slide-to="2"></li>--}}
+    {{--            </ol>--}}
+
+    {{--            <!-- Wrapper for slides -->--}}
+    {{--            <div class="carousel-inner">--}}
+    {{--                <div class="item active">--}}
+    {{--                    <img src="frontend/img/logo3.jpg" alt="Los Angeles" style="width:100%;">--}}
+    {{--                </div>--}}
+    {{--                @foreach($sliders as $slider)--}}
+    {{--                <div class="item">--}}
+    {{--                    <img src="{{$slider->photo_path}}" alt="New york" style="width:100%;">--}}
+    {{--                </div>--}}
+    {{--                    @endforeach--}}
+    {{--            </div>--}}
+
+    {{--            <!-- Left and right controls -->--}}
+    {{--            <a class="left carousel-control" href="#myCarousel" data-slide="prev">--}}
+    {{--                <span class="glyphicon glyphicon-chevron-left"></span>--}}
+    {{--                <span class="sr-only">Previous</span>--}}
+    {{--            </a>--}}
+    {{--            <a class="right carousel-control" href="#myCarousel" data-slide="next">--}}
+    {{--                <span class="glyphicon glyphicon-chevron-right"></span>--}}
+    {{--                <span class="sr-only">Next</span>--}}
+    {{--            </a>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
     <!--Start about  area -->
     <div class="about_area home-2">
         <div class="container">
@@ -38,7 +61,7 @@
                 <div class="col-md-6 col-sm-6">
                     <div class="content-inner">
                         <h3 class="module-title">
-                            Uniplas'a <span> Hoşgeldiniz</span>
+                            {!! html_entity_decode(nl2br(e($about[0]->title_tr))) !!}
                         </h3>
                         <div class="content-desc">
                             {!! html_entity_decode(nl2br(e($about[0]->description_tr))) !!}
@@ -57,7 +80,7 @@
                 <div class="col-md-12">
                     <div class="title">
                         <h3 class="module-title">
-                            Note Uniplas <span> Kurslarımız</span>
+                            Note Uniplas <span> Güncel Eğİtİmler</span>
                         </h3>
                     </div>
                 </div>
@@ -73,9 +96,11 @@
 
                             </div>
                             <div class="courses_content">
-                                <h2><a href="#">{{$course->title_eng}}</a></h2>
-                                {{ Str::limit(strip_tags($course->description_tr, 100)) }}
-                               </br> <a href="course/{{$course->id}}" class="">
+                                <h2><a href="#">{{$course->title_tr}}</a></h2>
+                                {{--                                {{html_entity_decode(nl2br(e($course->description_tr)))}}--}}
+                                {!!\Illuminate\Support\Str::limit($course->description_tr,100)  !!}
+                                </br>
+                                <a href="course/{{$course->id}}" class="">
                                     Devamını Oku ...</a>
                             </div>
                         </div>
@@ -162,11 +187,15 @@
                                                  alt=""/></a>
                             </div>
                             <div class="news_content">
-                                <h2><a href="#">{{$new->title_eng}}</a></h2>
+
                                 <p class="date">{{$new->created_at}}</p>
-                                <h2>
-                                    <a href="single-blog.html">  {{ Str::limit(strip_tags($new->title_tr, 100)) }} </a>
-                                </h2>
+                                <h2><a href="#">{{$new->title_tr}}</a></h2>
+
+                                {!!\Illuminate\Support\Str::limit($new->description_tr,100)  !!}
+                                </br>
+                                <a href="news/{{$new->id}}" class="">
+                                    Devamını Oku ...</a>
+
                             </div>
                         </div>
 

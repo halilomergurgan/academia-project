@@ -34,16 +34,16 @@ class MagazineController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $request->validate([
             'title_tr' => 'required',
-            'title_eng' => 'required',
+            'title_eng' => 'nullable',
             'description_tr' => 'required',
-            'description_eng' => 'required',
+            'description_eng' => 'nullable',
             'photo_path' => 'nullable',
             'file' => 'nullable'
         ]);
@@ -54,25 +54,25 @@ class MagazineController extends Controller
         $magazine->description_tr = request('description_tr');
         $magazine->description_eng = request('description_eng');
 
-        $path = Storage::disk('local')->putFileAs('/public/magazines', $request->file('file'));
-        dd($path);
-        // $magazine->photo_path = $path;
-        $magazine->file = $path;
-        if ($request->hasFile('photo_path' || $request->hasFile('file'))) {
 
-            //$this->validate(request(), array('photo_path' => 'image|mimes:png,jpg,jpeg,gif'));
-            //$this->validate(request(), array('file' => 'required|max:10000|mimes:doc,docx'));
-            //$path = Storage::disk('local')->put('/public/magazines', request()->file('file'));
+        if ($request->hasFile('file')) {
+            $uploadedFile = $request->file('file');
+            $filename = time() . $uploadedFile->getClientOriginalName();
+            $path = Storage::disk('local')->putFileAs('/public/magazines',$uploadedFile,$filename);
+            $magazine->file = $path;
+        }
 
 
-            //$result = Storage::putFileAs($path, $file, $fileName);
-
+        if ($request->hasFile('photo_path')) {
+            $this->validate(request(), array('photo_path' => 'image|mimes:png,jpg,jpeg,gif'));
+            $path = Storage::disk('local')->put('/public/magazines', request()->file('photo_path'));
+            $magazine->photo_path = $path;
         }
         $magazine->save();
 
-        if ($magazine){
+        if ($magazine) {
             return redirect()->route('magazines.index');
-        }else{
+        } else {
             return redirect()->back();
         }
     }
@@ -80,7 +80,7 @@ class MagazineController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -91,7 +91,7 @@ class MagazineController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -107,8 +107,8 @@ class MagazineController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -118,6 +118,13 @@ class MagazineController extends Controller
         $magazines->title_eng = request('title_eng');
         $magazines->description_tr = request('description_tr');
         $magazines->description_eng = request('description_eng');
+
+        if ($request->hasFile('file')) {
+            $uploadedFile = $request->file('file');
+            $filename = time() . $uploadedFile->getClientOriginalName();
+            $path = Storage::disk('local')->putFileAs('/public/magazines',$uploadedFile,$filename);
+            $magazines->file = $path;
+        }
         if ($request->hasFile('photo_path')) {
             $this->validate(request(), array('photo_path' => 'image|mimes:png,jpg,jpeg,gif'));
             $path = Storage::disk('local')->put('/public/magazines', request()->file('photo_path'));
@@ -126,9 +133,9 @@ class MagazineController extends Controller
 
         $magazines->save();
 
-        if ($magazines){
+        if ($magazines) {
             return redirect()->route('magazines.index');
-        }else{
+        } else {
             return redirect()->back();
         }
     }
@@ -136,7 +143,7 @@ class MagazineController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

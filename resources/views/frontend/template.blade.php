@@ -21,9 +21,15 @@
     <link rel="stylesheet" href="/frontend/css/nivo-slider.css">
     <link rel="stylesheet" href="/frontend/venobox/venobox.css">
     <link rel="stylesheet" href="/frontend/css/main.css">
-    <link rel="stylesheet" href="/frontend/css/nivo-slider.css">
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="stylesheet" href="/frontend/css/responsive.css">
+    <link rel="stylesheet" href="/css2/bootstrap.min.css">
+    <link rel="stylesheet" href="/css2/iconfont.min.css">
+    <link rel="stylesheet" href="/css2/revslider/settings.css">
+    <link rel="stylesheet" href="/css2/revslider/revslider.css">
+    <link rel="stylesheet" href="/css2/plugins.css">
+    <link rel="stylesheet" href="/css2/helper.css">
+    <link rel="stylesheet" href="/css2/style.css">
     <script src="/frontend/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;58db6a26-9e61-45d4-ab02-0ad0237200c3=<your API-key>"
@@ -36,16 +42,117 @@
             margin: 0;
         }
     </style>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Position the image container (needed to position the left and right arrows) */
+        .container {
+            position: relative;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Add a pointer when hovering over the thumbnail images */
+        .cursor {
+            cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Container for image text */
+        .caption-container {
+            text-align: center;
+            background-color: #222;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Six columns side by side */
+        .column {
+            float: left;
+            width: 16.66%;
+        }
+
+        /* Add a transparency effect for thumnbail images */
+        .demo {
+            opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 
 <!--start header  area -->
-<div class="header_area">
+<div class="header_area" style="height: 135px;">
     <div class="container">
         <div class="row">
+
             <!-- header  logo -->
             <div class="col-md-4 col-sm-3 col-xs-12">
-                <div class="logo"><a href="/"><img src="/frontend/img/logo.png" alt=""/></a></div>
+                <div class="logo">
+                    <a href="/"><img src="/frontend/img/logo2.png" alt=""
+                                     style="width: 460px; height: 225px; margin: -50px;"/></a>
+                </div>
             </div>
             <!-- end header  logo -->
             <div class="col-md-8 col-sm-9 col-xs-12">
@@ -67,41 +174,54 @@
 </div>
 <!--end header  area -->
 <!--Start nav  area -->
+
+
 <div class="nav_area">
     <div class="container">
         <div class="row">
-            <!--nav item-->
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <!--  nav menu-->
-                <nav class="menu">
-                    <ul class="navid pull-left">
+            <!--Menu start-->
+            <div class="col-lg-10 col-md-8 col-6 d-flex justify-content-end position-static" style="margin: -19px;">
+                <nav class="main-menu">
+                    <ul>
                         <li><a href="/">Anasayfa </a></li>
                         @foreach($_navbar as $key=> $menu)
-                            <li><a href="#">{{$menu->name_tr}} <i class="fa fa-angle-down"></i></a>
-                                <ul>
+                            <li><a href="#"><span>{{$menu->name_tr}}</span></a>
+                                <ul class="sub-menu">
                                     @foreach($menu->submenus as $key2 => $submenu)
-                                        <li><a href="">{{$submenu->name_tr}} </a>
-                                            <ul class="navid pull-left">
+                                        <li class="has-dropdown">
+                                            <a href="#">{{$submenu->name_tr}}</a>
+                                            <ul class="sub-menu">
                                                 @foreach($submenu->posts as $key3 => $post)
-                                                    <li><a href="/post/{{$post->id}}">{{$post->title_tr}} </a></li>
-                                                    <li></li>
+                                                    <li><a href="/post/{{$post->id}}">{{$post->title_tr}}</a></li>
                                                 @endforeach
                                             </ul>
-
                                         </li>
                                     @endforeach
                                 </ul>
+
                             </li>
                         @endforeach
+
+                        @foreach($_navbar2 as $key=> $menu)
+
+                            <li><a href="#"><span>{{$menu->name_tr}}</span></a>
+                                <ul class="sub-menu">
+                                    @foreach($menu->post as $key=>   $single)
+
+                                    <li><a href="/single-post/{{$single->id}}">{{$single->title_tr}}</a></li>
+                                        @endforeach
+                                </ul>
+                            </li>
+                        @endforeach
+                        <li><a href="/teachers">Eğitim Kadromuz</a></li>
                         <li><a href="/about">Hakkımızda</a></li>
                         <li><a href="/contact">İletişim</a></li>
                     </ul>
                 </nav>
+                <!--Menu end-->
             </div>
-            <!--end nav item -->
         </div>
     </div>
-
 </div>
 <!--end nav  area -->
 
@@ -164,6 +284,36 @@
             .add('mouseleave', function (e) {
                 e.get('target').options.unset('preset');
             });
+    }
+</script>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
     }
 </script>
 <!--End script  area -->

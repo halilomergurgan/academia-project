@@ -28,11 +28,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $contact = Contact::all();
-        $menus = Menu::with('post')->get();
-        $posts = Post::with('menu')->with('subMenu')->get();
         View::share([
-                'post' => $posts,
-                'menus'=>$menus,
                 'contact'=> $contact
             ]
         );

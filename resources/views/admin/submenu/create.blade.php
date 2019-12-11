@@ -38,17 +38,6 @@
                             </p>
                         @endif
                     </div>
-                    <div class="control-group">
-                        <label class="control-label">English Menu Name :</label>
-                        <div class="controls">
-                            <input type="text" class="span11" name="name_eng" value="{{old('name_eng')}}"/>
-                        </div>
-                        @if($errors->has('name_eng'))
-                            <p class="alert alert-danger">
-                                {{$errors->first('name_eng')}}
-                            </p>
-                        @endif
-                    </div>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-success">Save</button>
                     </div>

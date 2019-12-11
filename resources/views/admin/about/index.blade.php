@@ -12,9 +12,7 @@
                 <thead>
                 <tr>
                     <th>Turkish Title</th>
-                    <th>English Title</th>
                     <th>Description TR</th>
-                    <th>Description ENG</th>
                     <th>Embed Video Path</th>
                     <th>Edit</th>
                 </tr>
@@ -24,9 +22,7 @@
 
                     <tr class="gradeX">
                         <td>{{$about->title_tr}}</td>
-                        <td>{{$about->title_eng}}</td>
                         <td>{{ Str::limit($about->description_tr, 100) }}</td>
-                        <td>{{ Str::limit($about->description_eng, 100)}}</td>
                         <td>
                             <iframe width="250" height="200"
                                     src="https://www.youtube.com/embed/{{$about->embed_video_path}}" frameborder="0"

@@ -17,9 +17,7 @@
                 <thead>
                 <tr>
                     <th>Turkish Title</th>
-                    <th>English Title</th>
                     <th>Description TR</th>
-                    <th>Description ENG</th>
                     <th>Photo</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -30,9 +28,7 @@
                 @foreach($news as $new)
                     <tr class="gradeX">
                         <td>{{$new->title_tr}}</td>
-                        <td>{{$new->title_eng}}</td>
                         <td>{{ Str::limit($new->description_tr, 100) }}</td>
-                        <td>{{ Str::limit($new->description_eng, 100)}}</td>
                         <td><a href="{{$new->photo_path}}" target="_blank"><img src="{{$new->photo_path}}" height="100" width="100"></a></td>
                         <td class="center"><a href="{{route('news.edit',$new->id)}}" class="btn btn-success btn-mini">Edit</a>
                         </td>

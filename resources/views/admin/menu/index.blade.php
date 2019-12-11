@@ -15,7 +15,6 @@
                 <thead>
                 <tr>
                     <th>Menu TR</th>
-                    <th>Menu English</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -25,7 +24,6 @@
                 @foreach($menus as $menu)
                     <tr class="gradeX">
                         <td>{{$menu->name_tr}}</td>
-                        <td>{{$menu->name_eng}}</td>
                         <td class="center"><a href="{{route('menu.edit',$menu->id)}}"
                                               class="btn btn-success btn-mini">Edit</a>
                         </td>

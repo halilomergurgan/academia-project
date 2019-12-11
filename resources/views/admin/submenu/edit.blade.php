@@ -28,12 +28,6 @@
                             <input type="text" class="span11"  name="name_tr" value="{{$subMenu->name_tr}}"/>
                         </div>
                     </div>
-                    <div class="control-group">
-                        <label class="control-label">English Menu Name:</label>
-                        <div class="controls">
-                            <input type="text" class="span11"  name="name_eng" value="{{$subMenu->name_eng}}"/>
-                        </div>
-                    </div>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-success">Save</button>
                     </div>

@@ -15,9 +15,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title">
-                        <p class="lead">
-                            Sizden haber almak için her zaman buradayız.
-                        </p>
+
                     </div>
                 </div>
             </div>
@@ -31,9 +29,7 @@
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading">Telefon</h4>
-                                <p>
-                                    <span class="contact-emailto">{{$contact[0]->phone}}</span>
-                                </p>
+                                    {!! html_entity_decode(nl2br(e($contact[0]->phone))) !!}
                             </div>
                         </div>
                         <div class="media">
@@ -55,7 +51,7 @@
                                 <h4 class="media-heading">Address</h4>
                                 <p>
 									<span class="contact-emailto">
-									{{$contact[0]->address}}
+                                        {!! html_entity_decode(nl2br(e($contact[0]->address))) !!}
 									</span>
                                 </p>
                             </div>
@@ -76,8 +72,7 @@
                                 <a href="http://facebook.com/{{$contact[0]->facebook}}" target="_blank">
                                     <i class="fa fa-facebook"></i>
                                     <div class="icone_text">
-                                        <p>893K Followers</p>
-                                        <h5>Follow Us</h5>
+                                        <h5>Takip Et</h5>
                                     </div>
                                 </a>
                             </div>
@@ -91,8 +86,7 @@
                                 <a href="http://twitter.com/{{$contact[0]->twitter}}" target="_blank">
                                     <i class="fa fa-twitter"></i>
                                     <div class="icone_text">
-                                        <p>893K Followers</p>
-                                        <h5>Follow Us</h5>
+                                        <h5>Takip Et</h5>
                                     </div>
                                 </a>
                             </div>
@@ -100,14 +94,13 @@
                     </div>
                     <!-- end single item brand -->
                     <!-- single item brand -->
-                    <div class="col-md-3 col-sm-6 col-lg-3">
+                    <div class="col-md-3 col-sm-6 col-lg-3" style="    width: 1000px; height: 250px;">
                         <div class="share-item">
                             <div class="brand_content content_left_in">
                                 <a href="http://linkedin.com/in/{{$contact[0]->linkedin}}" target="_blank">
                                     <i class="fa fa-linkedin"></i>
                                     <div class="icone_text">
-                                        <p>893K Followers</p>
-                                        <h5>Follow Us</h5>
+                                        <h5>Takip Et</h5>
                                     </div>
                                 </a>
                             </div>

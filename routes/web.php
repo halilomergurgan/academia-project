@@ -27,6 +27,12 @@ Route::group(array('prefix' => 'admin'), function()
     Route::resource('menu','MenuController');
     Route::resource('submenu','SubMenuController');
     Route::resource('posts','PostController');
+    Route::resource('articles','ArticleController');
+    Route::resource('teachers','TeacherController');
+    Route::resource('single','SingleMenuController');
+    Route::resource('single-post','SinglePostController');
+    Route::resource('tasks','TaskController');
+    Route::resource('files','FileController');
 });
 
 Route::group(array('prefix' => '/'),function ()
@@ -37,6 +43,10 @@ Route::group(array('prefix' => '/'),function ()
     Route::get('/post/{id}', 'FrontendController@post');
     Route::get('course/{id}', 'FrontendController@course');
     Route::get('journal/{id}', 'FrontendController@journal');
+    Route::get('news/{id}', 'FrontendController@news');
+    Route::get('article/{id}/{slug}', 'FrontendController@article');
+    Route::get('teachers', 'FrontendController@teachers');
+    Route::get('/single-post/{id}', 'FrontendController@singlePost');
 });
 
 Auth::routes();

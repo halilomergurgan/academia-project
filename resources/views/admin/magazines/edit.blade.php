@@ -17,22 +17,9 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label">English Title :</label>
-                        <div class="controls">
-                            <input type="text" class="span11"  name="title_eng" value="{{$magazines->title_eng}}"/>
-                        </div>
-                    </div>
-                    <div class="control-group">
                         <label class="control-label">Turkish Description</label>
                         <div class="controls">
                             {{ Form::textarea( 'description_tr', $magazines->description_tr, array('id' => 'description_tr'))}}
-
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">English Description</label>
-                        <div class="controls">
-                            {{ Form::textarea( 'description_eng', $magazines->description_eng, array('id' => 'description_eng'))}}
 
                         </div>
                     </div>
@@ -43,6 +30,15 @@
                         </div>
                         <div class="controls">
                             <img src="{{$magazines->photo_path}}" height="100" width="100" >
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Dosya(Word-Pdf-Excel)</label>
+                        <div class="controls">
+                            <input type="file" class="span11" name="file"  value="{{$magazines->file}}"/>
+                        </div>
+                        <div class="controls">
+                            <img src="{{$magazines->file}}" height="100" width="100" >
                         </div>
                     </div>
                     <div class="form-actions">
@@ -61,6 +57,11 @@
 @endsection
 
 @section('js')
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>tinymce.init({selector:'textarea'});</script>
+<script src="https://cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'description_tr' );
+</script>
+<script>
+    CKEDITOR.replace( 'description_eng' );
+</script>
 @endsection

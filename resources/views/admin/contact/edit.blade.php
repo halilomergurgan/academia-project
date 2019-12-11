@@ -9,11 +9,11 @@
                 </div>
                 <div class="widget-content nopadding">
                     {!! Form::model($contact,['route'=>['contact.update',$contact->id],'method'=>'PUT','files'=>'true','class'=>'widget-content nopadding']) !!}
-
                     <div class="control-group">
-                        <label class="control-label">Phone :</label>
+                        <label class="control-label">Phone:</label>
                         <div class="controls">
-                            <input type="text" class="span11" name="phone" value="{{$contact->phone}}"/>
+                            {{ Form::textarea( 'phone', $contact->phone, array('id' => 'phone'))}}
+
                         </div>
                     </div>
                     <div class="control-group">
@@ -25,7 +25,8 @@
                     <div class="control-group">
                         <label class="control-label">Address :</label>
                         <div class="controls">
-                            <input type="text" class="span11" name="address" value="{{$contact->address}}"/>
+                            {{ Form::textarea( 'address', $contact->address, array('id' => 'address'))}}
+
                         </div>
                     </div>
                     <div class="control-group">
@@ -81,4 +82,11 @@
 @endsection
 
 @section('js')
+    <script src="https://cdn.ckeditor.com/4.13.0/full/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'phone' );
+    </script>
+    <script>
+        CKEDITOR.replace( 'address' );
+    </script>
 @endsection

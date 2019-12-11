@@ -16,7 +16,6 @@
                 <tr>
                     <th>Turkish Menu Name</th>
                     <th>Sub Menu TR</th>
-                    <th>Sub Menu English</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -25,8 +24,7 @@
                 @foreach($subMenu as $sub)
                     <tr class="gradeX">
                         <td>{{$sub->menu->name_tr}}</td>
-                        <td>{{$sub->name_tr}}</td>
-                        <td>{{$sub->name_eng}}</td>
+                        <td>{{$sub->name_tr}}</td> 
                         <td class="center"><a href="{{route('submenu.edit',$sub->id)}}"
                                               class="btn btn-success btn-mini">Edit</a>
                         </td>

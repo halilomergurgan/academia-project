@@ -17,11 +17,11 @@ class CreateSubMenusTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('menu_id')->unsigned();
             $table->string('name_tr');
-            $table->string('name_eng');
+            $table->string('name_eng')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
-            $table->unique(['menu_id','name_tr','name_eng']);
+            $table->unique(['menu_id','name_tr']);
 
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
 

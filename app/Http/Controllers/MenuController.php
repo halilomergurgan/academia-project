@@ -22,7 +22,7 @@ class MenuController extends Controller
     {
         $request->validate([
             'name_tr' => 'required',
-            'name_eng' => 'required'
+            'name_eng' => 'nullable'
         ]);
 
         $menu = new Menu();

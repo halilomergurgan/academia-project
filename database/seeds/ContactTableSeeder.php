@@ -15,13 +15,13 @@ class ContactTableSeeder extends Seeder
         DB::table('contact')->insert([
             'phone' => '+905395797956',
             'email' =>'halilomergurgan@gmail.com',
-            'address' =>'Üniversiteler, İkizler Binası, ODTÜ Teknokent D:Z-14, 06800 Çankaya/Ankara',
+            'address' =>'Adres: Kızılırmak Mah. Ufuk Üniv. Cad. Farilya İş Merkezi No:8 Kat:2 Daire:7 Çankaya / ANKARA',
             'facebook' =>'halilomergurgan',
             'twitter' =>'halilomergurgan',
             'linkedin' => 'halilomergurkan',
             'instagram' =>'halilomergurgan',
-            'latitude' => '39.8921689',
-            'longitude' =>'32.7609139',
+            'latitude' => '39.9093815',
+            'longitude' =>'32.8103307',
         ]);
     }
 }

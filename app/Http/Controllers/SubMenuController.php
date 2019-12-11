@@ -26,7 +26,7 @@ class SubMenuController extends Controller
     {
         $request->validate([
             'name_tr' => 'required',
-            'name_eng' => 'required'
+            'name_eng' => 'nullable'
         ]);
 
         $subMenu = new SubMenu();

@@ -14,5 +14,10 @@ class Magazine extends Model
     {
         return Storage::url($value);
     }
+
+    public function getFileAttribute($value)
+    {
+        return Storage::url($value);
+    }
 }
 

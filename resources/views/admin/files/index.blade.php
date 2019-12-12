@@ -48,8 +48,8 @@
                             <a href="{{$file->file_path}}" target="_blank"><img
                                     src="/admin/img/{{$file->extension}}.ico" style="height:50px; width:50px;">
                             </a>
-                            <input type="text" value={{URL::to('/')}}{{$file->file_path}} id="myInput">
-                            <button class="btn btn-info icon-copy" onclick="myFunction()"> Copy Link</button>
+                            <input type="text" value={{URL::to('/')}}{{$file->file_path}} id="myInput{{$file->id}}">
+                            <button class="btn btn-info icon-copy" onclick="myFunction({{$file->id}})"> Copy Link</button>
                         </td>
 
                         {!! Form::model($files,['route'=>['files.destroy',$file->id],'method'=>'DELETE']) !!}
@@ -83,8 +83,8 @@
     <script src="/admin/js/matrix.tables.js"></script>
 
     <script>
-        function myFunction() {
-            var copyText = document.getElementById("myInput");
+        function myFunction(x) {
+            var copyText = document.getElementById("myInput"+x);
             copyText.select();
             copyText.setSelectionRange(0, 99999);
             document.execCommand("copy");

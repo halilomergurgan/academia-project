@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -47,6 +49,13 @@ Route::group(array('prefix' => '/'),function ()
     Route::get('article/{id}/{slug}', 'FrontendController@article');
     Route::get('teachers', 'FrontendController@teachers');
     Route::get('/single-post/{id}', 'FrontendController@singlePost');
+});
+
+Route::get('/foo', function () {
+    $exitCode = Illuminate\Support\Facades\Artisan::call('storage:link', [
+
+    ]);
+
 });
 
 Auth::routes();

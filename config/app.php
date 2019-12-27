@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Note Uniplas'),
+    'name' =>'APP_NAME', 'Note Uniplus',
 
     /*
     |--------------------------------------------------------------------------

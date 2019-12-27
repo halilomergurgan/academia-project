@@ -14,7 +14,7 @@
                         <label class="control-label">Turkish Menu Name :</label>
                         <div class="controls">
                             <div class="controls">
-                                <select name="menu_id" class="span11">
+                                <select name="single_menu_id" class="span11">
                                     @foreach($menus as $menu)
                                         <option value="{{$menu->id}}" {{$menu->id == old('single_menu_id',$posts->single_menu_id) ? 'selected' : $menu->name_tr }}>{{$menu->name_tr}} </option>
 

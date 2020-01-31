@@ -173,9 +173,37 @@
     </div>
 </div>
 <!--end header  area -->
+<!--Start mobile menu  area -->
+<div class="mobile_memu_area home-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="mobile_memu">
+                    <!--  nav menu-->
+                    <nav>
+                        <ul class="navid">
+                            @foreach($_navbar2 as $key=> $menu)
+                            <li><a href="#">{{$menu->name_tr}}</a>
+                                <ul>
+                                    @foreach($menu->post as $key=>   $single)
+                                        <li><a href="/single-post/{{$single->id}}">{{$single->title_tr}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                            @endforeach
+                            <li><a href="/teachers">Eğitim Kadromuz</a></li>
+                            <li><a href="/about">Hakkımızda</a></li>
+                            <li><a href="/contact">İletişim</a></li>
+                        </ul>
+                    </nav>
+                    <!--end  nav menu-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end mobile menu  area -->
 <!--Start nav  area -->
-
-
 <div class="nav_area">
     <div class="container">
         <div class="row">
@@ -207,7 +235,6 @@
                             <li><a href="#"><span>{{$menu->name_tr}}</span></a>
                                 <ul class="sub-menu">
                                     @foreach($menu->post as $key=>   $single)
-
                                     <li><a href="/single-post/{{$single->id}}">{{$single->title_tr}}</a></li>
                                         @endforeach
                                 </ul>

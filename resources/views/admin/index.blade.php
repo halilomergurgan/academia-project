@@ -64,7 +64,8 @@
                     {
                         title : '{{ $task->name }}',
                         start : '{{ $task->task_date }}',
-                        url : '{{ route('tasks.edit', $task->id) }}'
+                        url : '{{ route('tasks.edit', $task->id) }}',
+
                     },
                     @endforeach
                 ]

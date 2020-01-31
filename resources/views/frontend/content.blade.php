@@ -5,22 +5,13 @@
     <div class="container">
         @foreach($sliders as $key => $slider)
             <div class="mySlides">
-                <img src="{{$slider->photo_path}}" style="width:100%; height: 500px;">
+                <img src="{{$slider->photo_path}}" style="width:100%; height: 500px;"  alt="{{$slider->title_tr}}">
             </div>
         @endforeach
         <a class="prev" onclick="plusSlides(-1)">❮</a>
         <a class="next" onclick="plusSlides(1)">❯</a>
-        <div class="caption-container">
-            <p id="caption"></p>
-        </div>
-        <div class="row" style="margin-right: -15px; margin-left: 0;">
-            @foreach($sliders as $key => $slider)
-                <div class="column">
-                    <img class="demo cursor" src="{{$slider->photo_path}}" style="width:199px; height: 110px;; "
-                         onclick="currentSlide({{$slider->id}})" alt="{{$slider->title_tr}}">
-                </div>
-            @endforeach
-        </div>
+
+
     </div>
     {{--    <div class="container">--}}
     {{--        <div id="myCarousel" class="carousel slide" data-ride="carousel">--}}
@@ -61,10 +52,10 @@
                 <div class="col-md-6 col-sm-6">
                     <div class="content-inner">
                         <h3 class="module-title">
-                            {!! html_entity_decode(nl2br(e($about[0]->title_tr))) !!}
+                            {!! $about[0]->title_tr !!}
                         </h3>
                         <div class="content-desc">
-                            {!! html_entity_decode(nl2br(e($about[0]->description_tr))) !!}
+                            {!! $about[0]->description_tr !!}
                         </div>
                     </div>
                 </div>
@@ -80,7 +71,7 @@
                 <div class="col-md-12">
                     <div class="title">
                         <h3 class="module-title">
-                            Note Uniplas <span> Güncel Eğİtİmler</span>
+                            Note Uniplus <span style='font-size: 35px;'> Güncel Eğİtİmler</span>
                         </h3>
                     </div>
                 </div>
@@ -95,8 +86,10 @@
                                                 alt=""/></a>
 
                             </div>
-                            <div class="courses_content">
-                                <h2><a href="#">{{$course->title_tr}}</a></h2>
+                            <div class="courses_content" style="
+    height: 300px;">
+                                <h2 style='font-size: 20px;
+    text-align: center;'><a href="course/{{$course->id}}"><strong>{{$course->title_tr}}</strong></a></h2>
                                 {{--                                {{html_entity_decode(nl2br(e($course->description_tr)))}}--}}
                                 {!!\Illuminate\Support\Str::limit($course->description_tr,100)  !!}
                                 </br>
@@ -110,61 +103,43 @@
         </div>
     </div>
     <!--end courses  area -->
-    <!--start priging  area -->
-    <div class="priging_area home-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="title">
-                                <h3 class="module-title">
-                                    Note Uniplas <span>Bülten</span>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="hidden-md col-sm-6 hidden-lg">
-                            <div class="service_item">
-                                <span class="lnr lnr-apartment"></span>
-                            </div>
-                        </div>
-                        <!-- end service single item -->
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-12 col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="title">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        @foreach($magazines as $magazine)
-                            <div class="col-md-6 col-sm-6 col-lg-6">
-                                <div class="priging_item">
-                                    <div class="priging_thumb">
-                                        <a href="/journal/{{$magazine->id}}">
-                                            <div class="atvImg">
-                                                <div class="atvImg-layer" data-img="{{$magazine->photo_path}}"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="priging_content">
-                                        <br>
-                                        <a href="/journal/{{$magazine->id}}">  {{ Str::limit(strip_tags($magazine->title_tr, 100)) }} </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end single item priging -->
-                        @endforeach
-                    </div>
+<div class="courses_area home-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title">
+                    <h3 class="module-title">
+                        Note Uniplus <span style='font-size: 35px;'>Bülten</span>
+                    </h3>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <!--start course single  item -->
+            @foreach($magazines as $magazine)
+                <div class="col-md-6 col-sm-6 col-lg-6">
+                    <div class="course_item">
+                        <div class="courses_thumb">
+                            <a href=""><img style="width: 280px; height: 200px;" src="{{$magazine->photo_path}}"
+                                            alt=""/></a>
+
+                        </div>
+                        <div class="courses_content" style="
+    height: 300px;">
+                            <h2 style='font-size: 20px;
+    text-align: center;'><a href="journal/{{$magazine->id}}"><strong>{{$magazine->title_tr}}</strong></a></h2>
+                            {{--                                {{html_entity_decode(nl2br(e($course->description_tr)))}}--}}
+                            {!!\Illuminate\Support\Str::limit($magazine->description_tr,100)  !!}
+                            </br>
+                            <a href="course/{{$magazine->id}}" class="">
+                                Devamını Oku ...</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
-    <!--end priging  area -->
+</div>
     <!--start news  area -->
     <div class="news_area home-2">
         <div class="container">
@@ -172,7 +147,7 @@
                 <div class="col-md-12">
                     <div class="title">
                         <h3 class="module-title">
-                            Bizden <span>Haberler</span>
+                            Note Uniplus <span style='font-size: 35px;' >Haberler</span>
                         </h3>
                     </div>
                 </div>
@@ -180,16 +155,17 @@
             <div class="row">
                 <!--start single news  item -->
                 @foreach($news as $new)
-                    <div style="width: 100%" class="col-md-3 col-sm-6">
-                        <div class="single_news_item">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single_news_item"  >
                             <div class="news_thumb">
                                 <a href="#"><img style="width: 280px; height: 200px;" src="{{$new->photo_path}}"
                                                  alt=""/></a>
                             </div>
-                            <div class="news_content">
+                            <div class="news_content" style="height: 220px;">
 
                                 <p class="date">{{$new->created_at}}</p>
-                                <h2><a href="#">{{$new->title_tr}}</a></h2>
+                                <h2 style='font-size: 20px;
+    text-align: center;'><a href="news/{{$new->id}}">{{$new->title_tr}}</a></h2>
 
                                 {!!\Illuminate\Support\Str::limit($new->description_tr,100)  !!}
                                 </br>

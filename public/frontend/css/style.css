@@ -578,6 +578,11 @@ courses area css
   padding-bottom: 50px;
   padding-top: 80px;
 }
+.journals_area {
+    background: #eeeeef url("img/transparent-back-1.png") no-repeat scroll 100% 0;
+    padding-bottom: 50px;
+    padding-top: 80px;
+}
 .course_item {
   background: #ffffff none repeat scroll 0 0;
   border-radius: 0;

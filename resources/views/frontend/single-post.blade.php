@@ -9,11 +9,12 @@
                     <div class="single_cos_item">
                         <h2 class="single_courcse_title">{{$post->title_tr}}</h2>
                         <br>
-                        @if(!isset($post->article_id))
-                        {!! html_entity_decode(nl2br(e($post->description_tr))) !!}
-                            @else
-                            {!! html_entity_decode(nl2br(e($post->article->description_tr))) !!}
-                        @endif
+                        {!! $post->description_tr !!}
+{{--                        @if(!isset($post->article_id))--}}
+{{--                        {!! html_entity_decode(nl2br(e($post->description_tr))) !!}--}}
+{{--                            @else--}}
+{{--                            {!! html_entity_decode(nl2br(e($post->article->description_tr))) !!}--}}
+{{--                        @endif--}}
                     </div>
                 </div>
                 @if(isset($post->photo_path) || isset($post->embed_video_path))
